@@ -26,6 +26,7 @@
 		<project.ciManagement.url>http://jenkins.itcloud/view/${project.groupId}/job/${project.artifactId}/</project.ciManagement.url>
 
 		<project.distributionManagement.site.id>www.itcloud.sk</project.distributionManagement.site.id>
+		<project.distributionManagement.site.url>file:///var/www/itcloud/domains/maven.itcloud/www/${project.groupId}/${project.artifactId}/${project.version}/</project.distributionManagement.site.url>
 		<project.distributionManagement.site.url>http://maven.itcloud/${project.groupId}/${project.artifactId}/${project.version}</project.distributionManagement.site.url>
 
 		<!-- distributionManagement repository -->
