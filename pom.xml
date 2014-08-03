@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>sk.itcloud.project</groupId>
+	<artifactId>sk.itcloud</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<packaging>pom</packaging>
+
+	<properties>
+
+		<project.name>${project.artifactId}</project.name>
+		<project.scm.url>http://git.itcloud.sk/summary/?r=${project.groupId}/${project.artifactId}</project.scm.url>
+		<project.scm.connection>ssh://git.itcloud.sk/summary/?r=${project.groupId}/${project.artifactId}</project.scm.connection>
+		<project.ciManagement.url>http://jenkins.itcloud.sk//view/${project.groupId}/job/${project.artifactId}/</project.ciManagement.url>
+
+	</properties>
+
+	<build>
+		<defaultGoal>install</defaultGoal>
+
+		<resources>
+			<resource>
+				<directory>${project.build.sourceDirectory}/</directory>
+				<targetPath>${project.build.outputDirectory}</targetPath>
+				<filtering>true</filtering>
+				<excludes>
+					<exclude>target</exclude>
+					<exclude>**/target/**</exclude>
+				</excludes>
+			</resource>
+		</resources>
+	</build>
+
+	<scm>
+		<url>${project.scm.url}</url>
+		<connection>${project.scm.connection}</connection>
+	</scm>
+
+	<issueManagement>
+		<system>Redmine</system>
+		<url>http://redmine.itcloud.sk</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>${project.ciManagement.url}</url>
+	</ciManagement>
+
+</project>
