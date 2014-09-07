@@ -1,11 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>sk.itcloud</groupId>
 	<artifactId>sk.itcloud.project</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.4-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 
@@ -14,7 +16,7 @@
 		<project.name>${project.artifactId}</project.name>
 
 		<project.scm.url>scm:git:http://git.itcloud/summary/?r=${project.groupId}/${project.artifactId}</project.scm.url>
-		<project.scm.connection>scm:git:ssh://git.itcloud/summary/?r=${project.groupId}/${project.artifactId}</project.scm.connection>
+		<project.scm.connection>scm:git:ssh://git.itcloud/git/${project.groupId}/${project.artifactId}</project.scm.connection>
 		<project.scm.developerConnection>scm:git:ssh://git.itcloud/git/${project.groupId}/${project.artifactId}</project.scm.developerConnection>
 		<project.scm.path>/git/${project.groupId}/${project.artifactId}</project.scm.path>
 		<project.scm.tag>master</project.scm.tag>
@@ -100,14 +102,17 @@
 					<configuration>
 						<tagNameFormat>@{project.artifactId}-@{project.version}</tagNameFormat>
 					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.scm</groupId>
+							<artifactId>maven-scm-provider-gitexe</artifactId>
+							<version>1.8.1</version>
+						</dependency>
+					</dependencies>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>sonar-maven-plugin</artifactId>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-site-plugin</artifactId>
 				</plugin>
 				<plugin>
 					<groupId>com.soebes.maven.plugins.dmg</groupId>
