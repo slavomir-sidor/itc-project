@@ -94,7 +94,7 @@
 			<plugin>
 				<groupId>de.taimos</groupId>
 				<artifactId>redmine-maven-plugin</artifactId>
-				<version>1.7.1-SNAPSHOT</version>
+				<version>1.7.0</version>
 
 				<configuration>
 					<projectIdentifier>${project.redmine.projectIdentifier}</projectIdentifier>
