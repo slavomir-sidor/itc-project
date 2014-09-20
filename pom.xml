@@ -12,7 +12,7 @@
 
 		<project.name>${project.artifactId}</project.name>
 
-		<project.scm.url>scm:git:http://git.itcloud/summary/?r=${project.groupId}/${project.artifactId}</project.scm.url>
+		<project.scm.url>scm:git:ssh://git.itcloud/summary/?r=${project.groupId}/${project.artifactId}</project.scm.url>
 		<project.scm.connection>scm:git:ssh://git.itcloud/git/${project.groupId}/${project.artifactId}</project.scm.connection>
 		<project.scm.developerConnection>scm:git:ssh://git.itcloud/git/${project.groupId}/${project.artifactId}</project.scm.developerConnection>
 		<project.scm.path>/git/${project.groupId}/${project.artifactId}</project.scm.path>
