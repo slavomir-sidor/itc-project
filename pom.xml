@@ -45,7 +45,7 @@
 		<project.issueManagement.url>http://redmine.itcloud</project.issueManagement.url>
 
 		<project.redmine.projectIdentifier>sk-itcloud-project</project.redmine.projectIdentifier>
-		<project.redmine.changelogFile>${project.build.outputDirectory}/redmine/changelog</project.redmine.changelogFile>
+		<project.redmine.changelogFile>${project.build.directory}/redmine/changelog</project.redmine.changelogFile>
 		<!-- <project.redmine.changelogTemplate>${project.resourceDirectory}</project.redmine.changelogTemplate> -->
 		<project.redmine.rpmchangelog>${project.build.outputDirectory}/redmine/rpmchangelog</project.redmine.rpmchangelog>
 		<project.redmine.rpmChangelogAuthor>${user.name}</project.redmine.rpmChangelogAuthor>
