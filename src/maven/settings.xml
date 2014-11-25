@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+
+	<pluginGroups>
+		<pluginGroup>org.sonatype.plugins</pluginGroup>
+		<pluginGroup>org.jboss.maven.plugins</pluginGroup>
+	</pluginGroups>
+
+	<servers>
+		<server>
+			<id>itc.releases</id>
+			<username>admin</username>
+		</server>
+
+		<server>
+			<id>itc.snapshots</id>
+			<username>admin</username>
+		</server>
+	</servers>
+
+	<profiles>
+
+		<profile>
+			<id>itc</id>
+
+			<activation>
+				<activeByDefault>itc</activeByDefault>
+			</activation>
+
+			<repositories>
+
+				<repository>
+					<id>itc.releases</id>
+					<name>ITC Snapshots</name>
+
+					<releases>
+						<enabled>false</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>warn</checksumPolicy>
+					</releases>
+
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+
+					<url>http://nexus.itc/content/repositories/snapshots</url>
+					<layout>default</layout>
+
+				</repository>
+
+				<repository>
+					<id>ict.releases</id>
+					<name>ICT Releases</name>
+
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+						<checksumPolicy>warn</checksumPolicy>
+					</releases>
+
+					<snapshots>
+						<enabled>false</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+
+					<url>http://nexus.itc/content/repositories/releases</url>
+					<layout>default</layout>
+
+				</repository>
+
+			</repositories>
+
+			<properties>
+				<sonar.jdbc.url>jdbc:mysql://mysql.ict/sonar</sonar.jdbc.url>
+				<sonar.jdbc.driver>com.mysql.jdbc.Driver</sonar.jdbc.driver>
+				<sonar.jdbc.username>sonar</sonar.jdbc.username>
+				<sonar.jdbc.password>sonar</sonar.jdbc.password>
+				<sonar.host.url>http://sonar.ict</sonar.host.url>
+			</properties>
+
+		</profile>
+
+	</profiles>
+
+	<activeProfiles>
+		<activeProfile>itc</activeProfile>
+	</activeProfiles>
+
+</settings>
