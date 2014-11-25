@@ -13,30 +13,36 @@
 
 		<project.name>${project.artifactId}</project.name>
 
-		<project.scm.url>scm:git:ssh://git.itc/summary/?r=${project.groupId}/${project.artifactId}</project.scm.url>
-		<project.scm.connection>scm:git:ssh://git.itc/git/${project.groupId}/${project.artifactId}</project.scm.connection>
-		<project.scm.developerConnection>scm:git:ssh://git.itc/git/${project.groupId}/${project.artifactId}</project.scm.developerConnection>
+		<release.tagNameFormat>@{project.artifactId}-@{project.version}</release.tagNameFormat>
+
+		<project.scm.host>git.itc</project.scm.host>
+		<project.scm.url>scm:git:ssh://${project.scm.host}/summary/?r=${project.groupId}/${project.artifactId}</project.scm.url>
+		<project.scm.connection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}</project.scm.connection>
+		<project.scm.developerConnection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}</project.scm.developerConnection>
 		<project.scm.path>/git/${project.groupId}/${project.artifactId}</project.scm.path>
 		<project.scm.tag>master</project.scm.tag>
 		<project.scm.scmVersionType>branch</project.scm.scmVersionType>
 		<project.scm.skipCheckoutIfExists>false</project.scm.skipCheckoutIfExists>
 		<project.scm.displayFileDetailUrl>${project.scm.url};a=blob;f=%FILE%;hb=refs/heads/${project.scm.tag}</project.scm.displayFileDetailUrl>
 
-		<project.ciManagement.system>Jenkins</project.ciManagement.system>
 		<project.ciManagement.host>jenkins.itc</project.ciManagement.host>
+		<project.ciManagement.system>Jenkins</project.ciManagement.system>
 		<project.ciManagement.url>http://${project.ciManagement.host}/view/${project.groupId}/job/${project.artifactId}/</project.ciManagement.url>
 
 		<project.distributionManagement.site.id>www.itcloud.sk</project.distributionManagement.site.id>
-		<project.distributionManagement.site.url>scp://maven.itc/var/www/itcloud/domains/maven.itcloud/www/${project.groupId}/${project.artifactId}/${project.version}/</project.distributionManagement.site.url>
+		<project.distributionManagement.site.host>maven.itc</project.distributionManagement.site.host>
+		<project.distributionManagement.site.url>scp://${project.distributionManagement.site.host}/usr/share/maven/${project.groupId}/${project.artifactId}/${project.version}/</project.distributionManagement.site.url>
 
 		<!-- distributionManagement repository -->
+		<project.distributionManagement.repository.host>nexus.itc</project.distributionManagement.repository.host>
 		<project.distributionManagement.repository.id>itc.releases</project.distributionManagement.repository.id>
-		<project.distributionManagement.repository.url>http://nexus.itc/content/repositories/itcloud-releases</project.distributionManagement.repository.url>
+		<project.distributionManagement.repository.url>http://${project.distributionManagement.repository.host}/content/repositories/releases</project.distributionManagement.repository.url>
 		<project.distributionManagement.repository.name>ITCloud Releases</project.distributionManagement.repository.name>
 
 		<!-- distributionManagement snapshotRepository -->
+		<project.distributionManagement.snapshotRepository.host>nexus.itc</project.distributionManagement.snapshotRepository.host>
 		<project.distributionManagement.snapshotRepository.id>itc.snapshots</project.distributionManagement.snapshotRepository.id>
-		<project.distributionManagement.snapshotRepository.url>http://nexus.itc/content/repositories/itcloud-snapshots</project.distributionManagement.snapshotRepository.url>
+		<project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/snapshots</project.distributionManagement.snapshotRepository.url>
 		<project.distributionManagement.snapshotRepository.name>ITCloud
 			Snapshots</project.distributionManagement.snapshotRepository.name>
 
@@ -104,7 +110,7 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-release-plugin</artifactId>
 					<configuration>
-						<tagNameFormat>@{project.artifactId}-@{project.version}</tagNameFormat>
+						<tagNameFormat>${release.tagNameFormat}</tagNameFormat>
 					</configuration>
 					<dependencies>
 						<dependency>
