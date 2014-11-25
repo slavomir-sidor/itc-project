@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -30,7 +31,7 @@
 
 		<project.distributionManagement.site.id>www.itcloud.sk</project.distributionManagement.site.id>
 		<project.distributionManagement.site.host>maven.itc</project.distributionManagement.site.host>
-		<project.distributionManagement.site.url>scp://${project.distributionManagement.site.host}/usr/share/maven/${project.groupId}/${project.artifactId}/${project.version}/</project.distributionManagement.site.url>
+		<project.distributionManagement.site.url>scp://${project.distributionManagement.site.host}/usr/share/maven-sites/${project.groupId}/${project.artifactId}/${project.version}/</project.distributionManagement.site.url>
 
 		<!-- distributionManagement repository -->
 		<project.distributionManagement.repository.host>nexus.itc</project.distributionManagement.repository.host>
@@ -51,6 +52,7 @@
 
 		<project.redmine.projectIdentifier>itc-project</project.redmine.projectIdentifier>
 		<project.redmine.changelogFile>${project.build.directory}/redmine/changelog</project.redmine.changelogFile>
+		<project.redmine.projectVersionIdentifier>${project.version}</project.redmine.projectVersionIdentifier>
 		<!-- <project.redmine.changelogTemplate>${project.resourceDirectory}</project.redmine.changelogTemplate> -->
 		<project.redmine.rpmchangelog>${project.build.outputDirectory}/redmine/rpmchangelog</project.redmine.rpmchangelog>
 		<project.redmine.rpmChangelogAuthor>${user.name}</project.redmine.rpmChangelogAuthor>
@@ -63,124 +65,6 @@
 
 
 	</properties>
-
-	<build>
-		<defaultGoal>install</defaultGoal>
-
-		<plugins>
-			<plugin>
-				<groupId>de.taimos</groupId>
-				<artifactId>redmine-maven-plugin</artifactId>
-				<version>1.7.0</version>
-
-				<configuration>
-					<projectIdentifier>${project.redmine.projectIdentifier}</projectIdentifier>
-					<projectVersionPrefix>${project.redmine.projectVersionIdentifier}</projectVersionPrefix>
-					<redmineKey>${project.redmine.redmineKey}</redmineKey>
-					<changelogTemplate>${project.redmine.changelogTemplate}</changelogTemplate>
-					<changelogFile>${project.redmine.changelogFile}</changelogFile>
-					<changelogVersion>${project.redmine.changelogVersion}</changelogVersion>
-					<rpmChangelogAuthor>${project.redmine.rpmChangelogAuthor}</rpmChangelogAuthor>
-				</configuration>
-
-			</plugin>
-		</plugins>
-
-		<resources>
-			<resource>
-				<directory>${project.build.sourceDirectory}/</directory>
-				<targetPath>${project.build.outputDirectory}</targetPath>
-				<filtering>true</filtering>
-				<excludes>
-					<exclude>.**</exclude>
-					<exclude>target</exclude>
-					<exclude>**/target/**</exclude>
-				</excludes>
-			</resource>
-		</resources>
-
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-scm-plugin</artifactId>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-release-plugin</artifactId>
-					<configuration>
-						<tagNameFormat>${release.tagNameFormat}</tagNameFormat>
-					</configuration>
-					<dependencies>
-						<dependency>
-							<groupId>org.apache.maven.scm</groupId>
-							<artifactId>maven-scm-provider-gitexe</artifactId>
-							<version>1.8.1</version>
-						</dependency>
-					</dependencies>
-				</plugin>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>sonar-maven-plugin</artifactId>
-				</plugin>
-				<plugin>
-					<groupId>com.soebes.maven.plugins.dmg</groupId>
-					<artifactId>doxygen-maven-plugin</artifactId>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-project-info-reports-plugin</artifactId>
-				</plugin>
-				<plugin>
-					<groupId>org.codehaus.sonar-plugins</groupId>
-					<artifactId>maven-report</artifactId>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-changes-plugin</artifactId>
-				</plugin>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>exec-maven-plugin</artifactId>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-site-plugin</artifactId>
-					<version>3.4</version>
-					<dependencies>
-						<dependency><!-- add support for ssh/scp -->
-							<groupId>org.apache.maven.wagon</groupId>
-							<artifactId>wagon-ssh</artifactId>
-							<version>1.0</version>
-						</dependency>
-					</dependencies>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-resources-plugin</artifactId>
-					<configuration>
-						<encoding>UTF-8</encoding>
-					</configuration>
-					<executions>
-						<execution>
-							<id>resources</id>
-							<phase>compile</phase>
-							<goals>
-								<goal>resources</goal>
-								<goal>testResources</goal>
-							</goals>
-							<inherited>false</inherited>
-							<configuration>
-								<indentSize>4</indentSize>
-								<lineLength>80</lineLength>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-
-	</build>
 
 	<scm>
 		<url>${project.scm.url}</url>
@@ -219,6 +103,178 @@
 		</snapshotRepository>
 
 	</distributionManagement>
+
+	<developers>
+		<developer>
+			<email>slavomir.kuzma@gmail.com</email>
+			<name>Slavomir Kuzma</name>
+			<roles>
+				<role>Management</role>
+				<role>Integration</role>
+				<role>Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<repositories>
+
+		<repository>
+
+			<id>${project.distributionManagement.snapshotRepository.id}</id>
+			<url>${project.distributionManagement.snapshotRepository.url}</url>
+			<name>${project.distributionManagement.snapshotRepository.name}</name>
+
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+
+		</repository>
+
+		<repository>
+			<id>${project.distributionManagement.repository.id}</id>
+			<url>${project.distributionManagement.repository.url}</url>
+			<name>${project.distributionManagement.repository.name}</name>
+
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+
+	</repositories>
+
+	<build>
+
+		<defaultGoal>install</defaultGoal>
+
+		<resources>
+			<resource>
+				<directory>${project.build.sourceDirectory}/</directory>
+				<targetPath>${project.build.outputDirectory}</targetPath>
+				<filtering>true</filtering>
+				<excludes>
+					<exclude>.**</exclude>
+					<exclude>target</exclude>
+					<exclude>**/target/**</exclude>
+				</excludes>
+			</resource>
+		</resources>
+
+		<pluginManagement>
+
+			<plugins>
+
+				<plugin>
+					<groupId>de.taimos</groupId>
+					<artifactId>redmine-maven-plugin</artifactId>
+					<version>1.7.0</version>
+					<configuration>
+						<projectIdentifier>${project.redmine.projectIdentifier}</projectIdentifier>
+						<projectVersionPrefix>${project.redmine.projectVersionIdentifier}</projectVersionPrefix>
+						<redmineKey>${project.redmine.redmineKey}</redmineKey>
+						<changelogTemplate>${project.redmine.changelogTemplate}</changelogTemplate>
+						<changelogFile>${project.redmine.changelogFile}</changelogFile>
+						<changelogVersion>${project.redmine.changelogVersion}</changelogVersion>
+						<rpmChangelogAuthor>${project.redmine.rpmChangelogAuthor}</rpmChangelogAuthor>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-scm-plugin</artifactId>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<configuration>
+						<tagNameFormat>${release.tagNameFormat}</tagNameFormat>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.scm</groupId>
+							<artifactId>maven-scm-provider-gitexe</artifactId>
+							<version>1.8.1</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>sonar-maven-plugin</artifactId>
+				</plugin>
+
+				<plugin>
+					<groupId>com.soebes.maven.plugins.dmg</groupId>
+					<artifactId>doxygen-maven-plugin</artifactId>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-project-info-reports-plugin</artifactId>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.sonar-plugins</groupId>
+					<artifactId>maven-report</artifactId>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-changes-plugin</artifactId>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.4</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.wagon</groupId>
+							<artifactId>wagon-ssh</artifactId>
+							<version>1.0</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+					<executions>
+						<execution>
+							<id>resources</id>
+							<phase>compile</phase>
+							<goals>
+								<goal>resources</goal>
+								<goal>testResources</goal>
+							</goals>
+							<inherited>false</inherited>
+							<configuration>
+								<indentSize>4</indentSize>
+								<lineLength>80</lineLength>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
 
 	<reporting>
 		<plugins>
@@ -271,50 +327,5 @@
 
 		</plugins>
 	</reporting>
-
-	<developers>
-		<developer>
-			<email>slavomir.kuzma@gmail.com</email>
-			<name>Slavomir Kuzma</name>
-			<roles>
-				<role>Management</role>
-				<role>Integration</role>
-				<role>Developer</role>
-			</roles>
-		</developer>
-	</developers>
-
-	<repositories>
-
-		<repository>
-
-			<id>${project.distributionManagement.snapshotRepository.id}</id>
-			<url>${project.distributionManagement.snapshotRepository.url}</url>
-			<name>${project.distributionManagement.snapshotRepository.name}</name>
-
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-
-		</repository>
-
-		<repository>
-			<id>${project.distributionManagement.repository.id}</id>
-			<url>${project.distributionManagement.repository.url}</url>
-			<name>${project.distributionManagement.repository.name}</name>
-
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
 
 </project>
