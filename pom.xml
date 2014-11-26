@@ -61,7 +61,7 @@
 		<sonar.branch>${project.scm.tag}</sonar.branch>
 		<sonar.importSources>true</sonar.importSources>
 		<sonar.dynamicAnalysis>true</sonar.dynamicAnalysis>
-		<sonar.language>php</sonar.language>
+		<sonar.language>xml</sonar.language>
 
 	</properties>
 
