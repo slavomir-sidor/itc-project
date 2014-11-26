@@ -63,7 +63,6 @@
 		<sonar.dynamicAnalysis>true</sonar.dynamicAnalysis>
 		<sonar.language>php</sonar.language>
 
-
 	</properties>
 
 	<scm>
