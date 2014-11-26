@@ -11,6 +11,7 @@ tomcat.${DOM}.  IN      A       ${IP}
 mysql.${DOM}.  IN      A       ${IP}
 pgsql.${DOM}.  IN      A       ${IP}
 tests.${DOM}.  IN      A       ${IP}
+visual-php-admin.${DOM}.  IN      A       ${IP}
 nginx.${DOM}.  IN      A       ${IP}
 *.snapshot.${DOM}.  IN      A       ${IP}
 *.release.${DOM}.  IN      A       ${IP}
