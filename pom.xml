@@ -13,6 +13,8 @@
 
 		<project.name>${project.artifactId}</project.name>
 
+		<project.organization.name>${project.groupId}</project.organization.name>
+		<project.organization.url>http://project.${project.artifactId}</project.organization.url>
 		<release.tagNameFormat>@{project.artifactId}-@{project.version}</release.tagNameFormat>
 
 		<project.scm.host>git.itc</project.scm.host>
@@ -30,7 +32,7 @@
 		<project.ciManagement.url>http://${project.ciManagement.host}/view/${project.groupId}/job/${project.artifactId}/</project.ciManagement.url>
 
 		<project.distributionManagement.site.id>www.itcloud.sk</project.distributionManagement.site.id>
-		<project.distributionManagement.site.host>maven.itc</project.distributionManagement.site.host>
+		<project.distributionManagement.site.host>http://maven.${project.artifactId}</project.distributionManagement.site.host>
 		<project.distributionManagement.site.url>file:///usr/share/maven-sites/${project.groupId}/${project.artifactId}/${project.version}/</project.distributionManagement.site.url>
 
 		<!-- distributionManagement repository -->
