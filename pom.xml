@@ -14,7 +14,7 @@
 
 		<project.organization.name>${project.groupId}</project.organization.name>
 		<project.organization.url>http://project.${project.artifactId}</project.organization.url>
-		<release.tagNameFormat>v@{project.version}</release.tagNameFormat>
+		<release.tagNameFormat>itc-@{project.version}</release.tagNameFormat>
 
 		<project.scm.host>git.itc</project.scm.host>
 		<project.scm.url>scm:git:ssh://${project.scm.host}/summary/?r=${project.groupId}/${project.artifactId}</project.scm.url>
