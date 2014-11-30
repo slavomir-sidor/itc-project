@@ -2,7 +2,9 @@ project.${DOM}.  IN      A       ${IP}
 redmine.${DOM}.  IN      A       ${IP}
 maven.${DOM}.    IN      A       ${IP}
 snapshot.${DOM}.  IN      A       ${IP}
+*.snapshot.${DOM}.  IN      A       ${IP}
 release.${DOM}.  IN      A       ${IP}
+*.release.${DOM}.  IN      A       ${IP}
 sonar.${DOM}.  IN      A       ${IP}
 jenkins.${DOM}.  IN      A       ${IP}
 nexus.${DOM}.  IN      A       ${IP}
@@ -13,5 +15,7 @@ pgsql.${DOM}.  IN      A       ${IP}
 tests.${DOM}.  IN      A       ${IP}
 visual-php-admin.${DOM}.  IN      A       ${IP}
 nginx.${DOM}.  IN      A       ${IP}
-*.snapshot.${DOM}.  IN      A       ${IP}
-*.release.${DOM}.  IN      A       ${IP}
+portal.${DOM}.  IN      A       ${IP}
+*.portal.${DOM}.  IN      A       ${IP}
+repository.${DOM}.  IN      A       ${IP}
+ldap.${DOM}.  IN      A       ${IP}
