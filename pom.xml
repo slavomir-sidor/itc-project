@@ -36,13 +36,13 @@
 		<project.distributionManagement.site.url>file:///usr/share/maven-sites/${project.groupId}/${project.artifactId}/${project.version}/</project.distributionManagement.site.url>
 
 		<!-- distributionManagement repository -->
-		<project.distributionManagement.repository.host>nexus.${project.artifactId}</project.distributionManagement.repository.host>
+		<project.distributionManagement.repository.host>nexus.itc</project.distributionManagement.repository.host>
 		<project.distributionManagement.repository.id>itc.releases</project.distributionManagement.repository.id>
 		<project.distributionManagement.repository.url>http://${project.distributionManagement.repository.host}/content/repositories/releases</project.distributionManagement.repository.url>
 		<project.distributionManagement.repository.name>ITCloud Releases</project.distributionManagement.repository.name>
 
 		<!-- distributionManagement snapshotRepository -->
-		<project.distributionManagement.snapshotRepository.host>nexus.${project.artifactId}</project.distributionManagement.snapshotRepository.host>
+		<project.distributionManagement.snapshotRepository.host>nexus.itc</project.distributionManagement.snapshotRepository.host>
 		<project.distributionManagement.snapshotRepository.id>itc.snapshots</project.distributionManagement.snapshotRepository.id>
 		<project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/snapshots</project.distributionManagement.snapshotRepository.url>
 		<project.distributionManagement.snapshotRepository.name>ITCloud
