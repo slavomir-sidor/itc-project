@@ -1,334 +1,318 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>sk.itcloud</groupId>
-	<artifactId>sk.itcloud.project</artifactId>
-	<version>0.0.12-SNAPSHOT</version>
+    <groupId>sk.itcloud</groupId>
+    <artifactId>sk.itcloud.project</artifactId>
+    <version>0.0.12-SNAPSHOT</version>
 
-	<packaging>pom</packaging>
+    <packaging>pom</packaging>
 
-	<properties>
+    <properties>
 
-		<project.name>${project.artifactId}</project.name>
+        <project.name>${project.artifactId}</project.name>
 
-		<project.organization.name>${project.groupId}</project.organization.name>
-		<project.organization.url>http://project.${project.artifactId}</project.organization.url>
-		<release.tagNameFormat>itc-@{project.version}</release.tagNameFormat>
+        <project.organization.name>${project.groupId}</project.organization.name>
+        <project.organization.url>http://project.${project.artifactId}</project.organization.url>
+        <release.tagNameFormat>itc-@{project.version}</release.tagNameFormat>
 
-		<project.scm.host>git.itc</project.scm.host>
-		<project.scm.url>scm:git:ssh://${project.scm.host}/summary/?r=${project.groupId}/${project.artifactId}</project.scm.url>
-		<project.scm.connection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}</project.scm.connection>
-		<project.scm.developerConnection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}</project.scm.developerConnection>
-		<project.scm.path>/git/${project.groupId}/${project.artifactId}</project.scm.path>
-		<project.scm.tag>master</project.scm.tag>
-		<project.scm.scmVersionType>branch</project.scm.scmVersionType>
-		<project.scm.skipCheckoutIfExists>false</project.scm.skipCheckoutIfExists>
-		<project.scm.displayFileDetailUrl>${project.scm.url};a=blob;f=%FILE%;hb=refs/heads/${project.scm.tag}</project.scm.displayFileDetailUrl>
+        <project.scm.host>git.itc</project.scm.host>
+        <project.scm.url>scm:git:ssh://${project.scm.host}/summary/?r=${project.groupId}/${project.artifactId}</project.scm.url>
+        <project.scm.connection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}</project.scm.connection>
+        <project.scm.developerConnection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}</project.scm.developerConnection>
+        <project.scm.path>/git/${project.groupId}/${project.artifactId}</project.scm.path>
+        <project.scm.tag>master</project.scm.tag>
+        <project.scm.scmVersionType>branch</project.scm.scmVersionType>
+        <project.scm.skipCheckoutIfExists>false</project.scm.skipCheckoutIfExists>
+        <project.scm.displayFileDetailUrl>${project.scm.url};a=blob;f=%FILE%;hb=refs/heads/${project.scm.tag}</project.scm.displayFileDetailUrl>
 
-		<project.ciManagement.host>jenkins.${project.artifactId}</project.ciManagement.host>
-		<project.ciManagement.system>Jenkins</project.ciManagement.system>
-		<project.ciManagement.url>http://${project.ciManagement.host}/view/${project.groupId}/job/${project.artifactId}/</project.ciManagement.url>
+        <project.ciManagement.host>jenkins.${project.artifactId}</project.ciManagement.host>
+        <project.ciManagement.system>Jenkins</project.ciManagement.system>
+        <project.ciManagement.url>http://${project.ciManagement.host}/view/${project.groupId}/job/${project.artifactId}/</project.ciManagement.url>
 
-		<project.distributionManagement.site.id>maven-${project.artifactId}</project.distributionManagement.site.id>
-		<project.distributionManagement.site.host>http://maven.${project.artifactId}</project.distributionManagement.site.host>
-		<project.distributionManagement.site.url>file:///usr/share/maven-sites/${project.groupId}/${project.artifactId}/${project.version}/</project.distributionManagement.site.url>
+        <project.distributionManagement.site.id>maven-${project.artifactId}</project.distributionManagement.site.id>
+        <project.distributionManagement.site.host>http://maven.${project.artifactId}</project.distributionManagement.site.host>
+        <project.distributionManagement.site.url>file:///usr/share/maven-sites/${project.groupId}/${project.artifactId}/${project.version}/</project.distributionManagement.site.url>
 
-		<!-- distributionManagement repository -->
-		<project.distributionManagement.repository.host>nexus.itc</project.distributionManagement.repository.host>
-		<project.distributionManagement.repository.id>itc.releases</project.distributionManagement.repository.id>
-		<project.distributionManagement.repository.url>http://${project.distributionManagement.repository.host}/content/repositories/releases</project.distributionManagement.repository.url>
-		<project.distributionManagement.repository.name>ITCloud Releases</project.distributionManagement.repository.name>
+        <!-- distributionManagement repository -->
+        <project.distributionManagement.repository.host>nexus.itc</project.distributionManagement.repository.host>
+        <project.distributionManagement.repository.id>itc.releases</project.distributionManagement.repository.id>
+        <project.distributionManagement.repository.url>http://${project.distributionManagement.repository.host}/content/repositories/releases</project.distributionManagement.repository.url>
+        <project.distributionManagement.repository.name>ITCloud Releases</project.distributionManagement.repository.name>
 
-		<!-- distributionManagement snapshotRepository -->
-		<project.distributionManagement.snapshotRepository.host>nexus.itc</project.distributionManagement.snapshotRepository.host>
-		<project.distributionManagement.snapshotRepository.id>itc.snapshots</project.distributionManagement.snapshotRepository.id>
-		<project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/snapshots</project.distributionManagement.snapshotRepository.url>
-		<project.distributionManagement.snapshotRepository.name>ITCloud
-			Snapshots</project.distributionManagement.snapshotRepository.name>
+        <!-- distributionManagement snapshotRepository -->
+        <project.distributionManagement.snapshotRepository.host>nexus.itc</project.distributionManagement.snapshotRepository.host>
+        <project.distributionManagement.snapshotRepository.id>itc.snapshots</project.distributionManagement.snapshotRepository.id>
+        <project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/snapshots</project.distributionManagement.snapshotRepository.url>
+        <project.distributionManagement.snapshotRepository.name>ITCloud
+            Snapshots</project.distributionManagement.snapshotRepository.name>
 
-		<project.issueManagement.system>Redmine</project.issueManagement.system>
-		<project.issueManagement.host>redmine.${project.artifactId}</project.issueManagement.host>
-		<project.issueManagement.url>http://${project.issueManagement.host}</project.issueManagement.url>
+        <project.issueManagement.system>Redmine</project.issueManagement.system>
+        <project.issueManagement.host>redmine.${project.artifactId}</project.issueManagement.host>
+        <project.issueManagement.url>http://${project.issueManagement.host}</project.issueManagement.url>
 
-		<project.redmine.projectIdentifier>itc-${project.groupId}-${project.artifactId}</project.redmine.projectIdentifier>
-		<project.redmine.changelogFile>${project.build.directory}/redmine/changelog</project.redmine.changelogFile>
-		<project.redmine.projectVersionIdentifier>${project.version}</project.redmine.projectVersionIdentifier>
-		<!-- <project.redmine.changelogTemplate>${project.resourceDirectory}</project.redmine.changelogTemplate> -->
-		<project.redmine.rpmchangelog>${project.build.outputDirectory}/redmine/rpmchangelog</project.redmine.rpmchangelog>
-		<project.redmine.rpmChangelogAuthor>${user.name}</project.redmine.rpmChangelogAuthor>
+        <project.redmine.projectIdentifier>itc-${project.groupId}-${project.artifactId}</project.redmine.projectIdentifier>
+        <project.redmine.changelogFile>${project.build.directory}/redmine/changelog</project.redmine.changelogFile>
+        <project.redmine.projectVersionIdentifier>${project.version}</project.redmine.projectVersionIdentifier>
+        <!-- <project.redmine.changelogTemplate>${project.resourceDirectory}</project.redmine.changelogTemplate> -->
+        <project.redmine.rpmchangelog>${project.build.outputDirectory}/redmine/rpmchangelog</project.redmine.rpmchangelog>
+        <project.redmine.rpmChangelogAuthor>${user.name}</project.redmine.rpmChangelogAuthor>
 
-		<!-- Sonar -->
-		<sonar.branch>${project.scm.tag}</sonar.branch>
-		<sonar.importSources>true</sonar.importSources>
-		<sonar.dynamicAnalysis>true</sonar.dynamicAnalysis>
-		<sonar.language>xml</sonar.language>
+        <!-- Sonar -->
+        <sonar.branch>${project.scm.tag}</sonar.branch>
+        <sonar.importSources>true</sonar.importSources>
+        <sonar.dynamicAnalysis>true</sonar.dynamicAnalysis>
 
-	</properties>
+    </properties>
 
-	<scm>
-		<url>${project.scm.url}</url>
-		<connection>${project.scm.connection}</connection>
-		<developerConnection>${project.scm.developerConnection}</developerConnection>
-		<tag>sk.itcloud.project-0.0.6</tag>
-	</scm>
+    <scm>
+        <url>${project.scm.url}</url>
+        <connection>${project.scm.connection}</connection>
+        <developerConnection>${project.scm.developerConnection}</developerConnection>
+        <tag>sk.itcloud.project-0.0.6</tag>
+    </scm>
 
-	<issueManagement>
-		<system>${project.issueManagement.system}</system>
-		<url>${project.issueManagement.url}</url>
-	</issueManagement>
+    <issueManagement>
+        <system>${project.issueManagement.system}</system>
+        <url>${project.issueManagement.url}</url>
+    </issueManagement>
 
-	<ciManagement>
-		<system>${project.ciManagement.system}</system>
-		<url>${project.ciManagement.url}</url>
-	</ciManagement>
+    <ciManagement>
+        <system>${project.ciManagement.system}</system>
+        <url>${project.ciManagement.url}</url>
+    </ciManagement>
 
-	<distributionManagement>
+    <distributionManagement>
 
-		<site>
-			<id>${project.distributionManagement.site.id}</id>
-			<url>${project.distributionManagement.site.url}</url>
-		</site>
+        <site>
+            <id>${project.distributionManagement.site.id}</id>
+            <url>${project.distributionManagement.site.url}</url>
+        </site>
 
-		<repository>
-			<id>${project.distributionManagement.repository.id}</id>
-			<name>${project.distributionManagement.repository.name}</name>
-			<url>${project.distributionManagement.repository.url}</url>
-		</repository>
+        <repository>
+            <id>${project.distributionManagement.repository.id}</id>
+            <name>${project.distributionManagement.repository.name}</name>
+            <url>${project.distributionManagement.repository.url}</url>
+        </repository>
 
-		<snapshotRepository>
-			<id>${project.distributionManagement.snapshotRepository.id}</id>
-			<name>${project.distributionManagement.snapshotRepository.name}</name>
-			<url>${project.distributionManagement.snapshotRepository.url}</url>
-		</snapshotRepository>
+        <snapshotRepository>
+            <id>${project.distributionManagement.snapshotRepository.id}</id>
+            <name>${project.distributionManagement.snapshotRepository.name}</name>
+            <url>${project.distributionManagement.snapshotRepository.url}</url>
+        </snapshotRepository>
 
-	</distributionManagement>
+    </distributionManagement>
 
-	<developers>
-		<developer>
-			<email>slavomir.kuzma@gmail.com</email>
-			<name>Slavomir Kuzma</name>
-			<roles>
-				<role>Management</role>
-				<role>Integration</role>
-				<role>Developer</role>
-			</roles>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <email>slavomir.kuzma@gmail.com</email>
+            <name>Slavomir Kuzma</name>
+            <roles>
+                <role>Management</role>
+                <role>Integration</role>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
 
-	<repositories>
+    <repositories>
 
-		<repository>
+        <repository>
 
-			<id>${project.distributionManagement.snapshotRepository.id}</id>
-			<url>${project.distributionManagement.snapshotRepository.url}</url>
-			<name>${project.distributionManagement.snapshotRepository.name}</name>
+            <id>${project.distributionManagement.snapshotRepository.id}</id>
+            <url>${project.distributionManagement.snapshotRepository.url}</url>
+            <name>${project.distributionManagement.snapshotRepository.name}</name>
 
-			<releases>
-				<enabled>false</enabled>
-			</releases>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
 
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
 
-		</repository>
+        </repository>
 
-		<repository>
-			<id>${project.distributionManagement.repository.id}</id>
-			<url>${project.distributionManagement.repository.url}</url>
-			<name>${project.distributionManagement.repository.name}</name>
+        <repository>
+            <id>${project.distributionManagement.repository.id}</id>
+            <url>${project.distributionManagement.repository.url}</url>
+            <name>${project.distributionManagement.repository.name}</name>
 
-			<releases>
-				<enabled>true</enabled>
-			</releases>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
 
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
 
-	</repositories>
+    </repositories>
 
-	<build>
+    <build>
 
-		<defaultGoal>install</defaultGoal>
+        <defaultGoal>install</defaultGoal>
 
-		<sourceDirectory>${basedir}</sourceDirectory>
+        <pluginManagement>
 
-		<resources>
-			<resource>
-				<directory>${project.build.sourceDirectory}/</directory>
-				<targetPath>${project.build.outputDirectory}</targetPath>
-				<filtering>true</filtering>
-				<excludes>
-					<exclude>.**</exclude>
-					<exclude>target</exclude>
-					<exclude>**/target/**</exclude>
-				</excludes>
-			</resource>
-		</resources>
+            <plugins>
 
-		<pluginManagement>
+                <plugin>
+                    <groupId>de.taimos</groupId>
+                    <artifactId>redmine-maven-plugin</artifactId>
+                    <version>1.7.0</version>
+                    <configuration>
+                        <projectIdentifier>${project.redmine.projectIdentifier}</projectIdentifier>
+                        <projectVersionPrefix>${project.redmine.projectVersionIdentifier}</projectVersionPrefix>
+                        <redmineKey>${project.redmine.redmineKey}</redmineKey>
+                        <changelogTemplate>${project.redmine.changelogTemplate}</changelogTemplate>
+                        <changelogFile>${project.redmine.changelogFile}</changelogFile>
+                        <changelogVersion>${project.redmine.changelogVersion}</changelogVersion>
+                        <rpmChangelogAuthor>${project.redmine.rpmChangelogAuthor}</rpmChangelogAuthor>
+                    </configuration>
+                </plugin>
 
-			<plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-plugin</artifactId>
+                </plugin>
 
-				<plugin>
-					<groupId>de.taimos</groupId>
-					<artifactId>redmine-maven-plugin</artifactId>
-					<version>1.7.0</version>
-					<configuration>
-						<projectIdentifier>${project.redmine.projectIdentifier}</projectIdentifier>
-						<projectVersionPrefix>${project.redmine.projectVersionIdentifier}</projectVersionPrefix>
-						<redmineKey>${project.redmine.redmineKey}</redmineKey>
-						<changelogTemplate>${project.redmine.changelogTemplate}</changelogTemplate>
-						<changelogFile>${project.redmine.changelogFile}</changelogFile>
-						<changelogVersion>${project.redmine.changelogVersion}</changelogVersion>
-						<rpmChangelogAuthor>${project.redmine.rpmChangelogAuthor}</rpmChangelogAuthor>
-					</configuration>
-				</plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <configuration>
+                        <tagNameFormat>${release.tagNameFormat}</tagNameFormat>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.scm</groupId>
+                            <artifactId>maven-scm-provider-gitexe</artifactId>
+                            <version>1.8.1</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
 
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-scm-plugin</artifactId>
-				</plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                </plugin>
 
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-release-plugin</artifactId>
-					<configuration>
-						<tagNameFormat>${release.tagNameFormat}</tagNameFormat>
-					</configuration>
-					<dependencies>
-						<dependency>
-							<groupId>org.apache.maven.scm</groupId>
-							<artifactId>maven-scm-provider-gitexe</artifactId>
-							<version>1.8.1</version>
-						</dependency>
-					</dependencies>
-				</plugin>
+                <plugin>
+                    <groupId>com.soebes.maven.plugins.dmg</groupId>
+                    <artifactId>doxygen-maven-plugin</artifactId>
+                </plugin>
 
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>sonar-maven-plugin</artifactId>
-				</plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                </plugin>
 
-				<plugin>
-					<groupId>com.soebes.maven.plugins.dmg</groupId>
-					<artifactId>doxygen-maven-plugin</artifactId>
-				</plugin>
+                <plugin>
+                    <groupId>org.codehaus.sonar-plugins</groupId>
+                    <artifactId>maven-report</artifactId>
+                </plugin>
 
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-project-info-reports-plugin</artifactId>
-				</plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-changes-plugin</artifactId>
+                </plugin>
 
-				<plugin>
-					<groupId>org.codehaus.sonar-plugins</groupId>
-					<artifactId>maven-report</artifactId>
-				</plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                </plugin>
 
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-changes-plugin</artifactId>
-				</plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.4</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.wagon</groupId>
+                            <artifactId>wagon-ssh</artifactId>
+                            <version>1.0</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
 
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>exec-maven-plugin</artifactId>
-				</plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>resources</id>
+                            <phase>compile</phase>
+                            <goals>
+                                <goal>resources</goal>
+                                <goal>testResources</goal>
+                            </goals>
+                            <inherited>false</inherited>
+                            <configuration>
+                                <indentSize>4</indentSize>
+                                <lineLength>80</lineLength>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
 
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-site-plugin</artifactId>
-					<version>3.4</version>
-					<dependencies>
-						<dependency>
-							<groupId>org.apache.maven.wagon</groupId>
-							<artifactId>wagon-ssh</artifactId>
-							<version>1.0</version>
-						</dependency>
-					</dependencies>
-				</plugin>
+    </build>
 
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-resources-plugin</artifactId>
-					<configuration>
-						<encoding>UTF-8</encoding>
-					</configuration>
-					<executions>
-						<execution>
-							<id>resources</id>
-							<phase>compile</phase>
-							<goals>
-								<goal>resources</goal>
-								<goal>testResources</goal>
-							</goals>
-							<inherited>false</inherited>
-							<configuration>
-								<indentSize>4</indentSize>
-								<lineLength>80</lineLength>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+    <reporting>
+        <plugins>
 
-	</build>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.6</version>
 
-	<reporting>
-		<plugins>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependencies</report>
+                            <report>project-team</report>
+                            <report>mailing-list</report>
+                            <report>cim</report>
+                            <report>issue-tracking</report>
+                            <report>license</report>
+                            <report>scm</report>
+                            <report>modules</report>
+                            <report>plugin-management</report>
+                            <report>summary</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.6</version>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-changelog-plugin</artifactId>
+                <version>2.3</version>
 
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>dependencies</report>
-							<report>project-team</report>
-							<report>mailing-list</report>
-							<report>cim</report>
-							<report>issue-tracking</report>
-							<report>license</report>
-							<report>scm</report>
-							<report>modules</report>
-							<report>plugin-management</report>
-							<report>summary</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
+                <configuration>
+                    <executions>
+                        <execution>
+                            <id>include-announcement-file</id>
+                            <phase>install</phase>
+                            <goals>
+                                <goal>announcement-generate</goal>
+                            </goals>
+                            <configuration>
+                                <announcementFile>CHANGES.txt</announcementFile>
+                                <outputDirectory>${project.build.outputDirectory}/META-INF</outputDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </configuration>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-changelog-plugin</artifactId>
-				<version>2.3</version>
+            </plugin>
 
-				<configuration>
-					<executions>
-						<execution>
-							<id>include-announcement-file</id>
-							<phase>install</phase>
-							<goals>
-								<goal>announcement-generate</goal>
-							</goals>
-							<configuration>
-								<announcementFile>CHANGES.txt</announcementFile>
-								<outputDirectory>${project.build.outputDirectory}/META-INF</outputDirectory>
-							</configuration>
-						</execution>
-					</executions>
-				</configuration>
-
-			</plugin>
-
-		</plugins>
-	</reporting>
+        </plugins>
+    </reporting>
 
 </project>
