@@ -95,12 +95,11 @@
 
 	</repositories>
 
-
 	<properties>
 
 		<project.name>${project.artifactId}</project.name>
 		<project.encoding>UTF-8</project.encoding>
-		
+
 		<project.organization.name>${project.groupId}</project.organization.name>
 		<project.organization.url>http://project.${project.artifactId}</project.organization.url>
 		<release.tagNameFormat>itc-@{project.version}</release.tagNameFormat>
@@ -114,7 +113,7 @@
 		<project.scm.scmVersionType>branch</project.scm.scmVersionType>
 		<project.scm.skipCheckoutIfExists>false</project.scm.skipCheckoutIfExists>
 		<project.scm.displayFileDetailUrl>${project.scm.url};a=blob;f=%FILE%;hb=refs/heads/${project.scm.tag}</project.scm.displayFileDetailUrl>
-		
+
 		<project.changelog.announcementFile>CHANGES.txt</project.changelog.announcementFile>
 		<project.changelog.outputDirectory>${project.build.outputDirectory}/META-INF/</project.changelog.outputDirectory>
 
@@ -136,8 +135,7 @@
 		<project.distributionManagement.snapshotRepository.host>nexus.itc</project.distributionManagement.snapshotRepository.host>
 		<project.distributionManagement.snapshotRepository.id>itc.snapshots</project.distributionManagement.snapshotRepository.id>
 		<project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/snapshots</project.distributionManagement.snapshotRepository.url>
-		<project.distributionManagement.snapshotRepository.name>ITCloud
-			Snapshots</project.distributionManagement.snapshotRepository.name>
+		<project.distributionManagement.snapshotRepository.name>ITCloud Snapshots</project.distributionManagement.snapshotRepository.name>
 
 		<project.issueManagement.system>Redmine</project.issueManagement.system>
 		<project.issueManagement.host>redmine.${project.artifactId}</project.issueManagement.host>
@@ -163,7 +161,7 @@
 		<rpm.needarch>noarch</rpm.needarch>
 
 	</properties>
-	
+
 	<build>
 
 		<defaultGoal>install</defaultGoal>
@@ -371,7 +369,7 @@
 									<groupname>apache</groupname>
 									<sources>
 										<source>
-											<location>${project.build.directory}/classes</location>
+											<location>${project.build.directory}</location>
 										</source>
 									</sources>
 								</mapping>
