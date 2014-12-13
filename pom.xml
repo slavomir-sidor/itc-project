@@ -354,7 +354,6 @@
 
 							<provides>
 								<provide>${rpm.name}</provide>
-
 							</provides>
 
 							<defineStatements>
@@ -369,7 +368,7 @@
 									<groupname>apache</groupname>
 									<sources>
 										<source>
-											<location>${project.build.directory}</location>
+											<location>${project.build.directory}/site</location>
 										</source>
 									</sources>
 								</mapping>
