@@ -1,36 +1,38 @@
-# Mail
-smtp.${DOM}.                IN      A       ${IP}
-imap.${DOM}.                IN      A       ${IP}
+${DOM}.dev.                      IN      A       ${IP}
+${DOM}.stage.                    IN      A       ${IP}
+${DOM}.prod.                     IN      A       ${IP}
+${DOM}.test.                     IN      A       ${IP}
 
-# Security
-ldap.${DOM}.                IN      A       ${IP}
+smtp.${DOM}.                     IN      A       ${IP}
+imap.${DOM}.                     IN      A       ${IP}
+email.${DOM}.                    IN      A       ${IP}
 
-# Maven
-maven.${DOM}.               IN      A       ${IP}
-snapshot.maven.${DOM}.      IN      A       ${IP}
-*.snapshot.maven.${DOM}.    IN      A       ${IP}
-release.maven.${DOM}.       IN      A       ${IP}
-*.release.${DOM}.           IN      A       ${IP}
+ldap.${DOM}.                     IN      A       ${IP}
 
-# Repository
-nexus.${DOM}.               IN      A       ${IP}
-repository.${DOM}.          IN      A       ${IP}
+maven.${DOM}.                    IN      A       ${IP}
+snapshots.maven.${DOM}.          IN      A       ${IP}
+*.snapshots.maven.${DOM}.        IN      A       ${IP}
+releases.maven.${DOM}.           IN      A       ${IP}
+*.releases.${DOM}.               IN      A       ${IP}
 
-# Continous Integration
-jenkins.${DOM}.             IN      A       ${IP}
-git.${DOM}.                 IN      A       ${IP}
+nexus.${DOM}.                    IN      A       ${IP}
+snapshots.nexus.${DOM}.          IN      A       ${IP}
+releases.nexus.${DOM}.           IN      A       ${IP}
+repository.${DOM}.               IN      A       ${IP}
+snapshots.repository.${DOM}.     IN      A       ${IP}
+releases.repository.${DOM}.      IN      A       ${IP}
+snapshots.nexus.${DOM}.          IN      A       ${IP}
 
-# Tests
-tests.${DOM}.               IN      A       ${IP}
-sonar.${DOM}.               IN      A       ${IP}
+jenkins.${DOM}.                  IN      A       ${IP}
+git.${DOM}.                      IN      A       ${IP}
 
-# Data
-mysql.${DOM}.               IN      A       ${IP}
-pgsql.${DOM}.               IN      A       ${IP}
+tests.${DOM}.                    IN      A       ${IP}
+sonar.${DOM}.                    IN      A       ${IP}
 
-# Applications
-apache.${DOM}.              IN      A       ${IP}
-tomcat.${DOM}.              IN      A       ${IP}
-nginx.${DOM}.               IN      A       ${IP}
-awstats.${DOM}.             IN      A       ${IP}
-logs.${DOM}.                IN      A       ${IP}
+apache.${DOM}.                   IN      A       ${IP}
+tomcat.${DOM}.                   IN      A       ${IP}
+nginx.${DOM}.                    IN      A       ${IP}
+awstats.${DOM}.                  IN      A       ${IP}
+logs.${DOM}.                     IN      A       ${IP}
+mysql.${DOM}.                    IN      A       ${IP}
+pgsql.${DOM}.                    IN      A       ${IP}
