@@ -3,6 +3,12 @@ ${DOM}.stage.                    IN      A       ${IP}
 ${DOM}.prod.                     IN      A       ${IP}
 ${DOM}.test.                     IN      A       ${IP}
 
+${DOM}.wamp.                     IN      A   127.0.0.1
+${DOM}.wamp.dev.                 IN      A   127.0.0.1
+${DOM}.wamp.stage.               IN      A   127.0.0.1
+${DOM}.wamp.prod.                IN      A   127.0.0.1
+${DOM}.wamp.test.                IN      A   127.0.0.1
+
 smtp.${DOM}.                     IN      A       ${IP}
 imap.${DOM}.                     IN      A       ${IP}
 email.${DOM}.                    IN      A       ${IP}
