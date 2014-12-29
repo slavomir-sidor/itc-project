@@ -10,7 +10,7 @@
 	<version>0.0.13-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
-	
+
 	<properties>
 
 		<project.name>${project.artifactId}</project.name>
@@ -77,7 +77,7 @@
 		<rpm.needarch>noarch</rpm.needarch>
 
 	</properties>
-	
+
 	<name>${project.artifactId}</name>
 
 	<organization>
@@ -300,6 +300,13 @@
 	</build>
 
 	<profiles>
+
+		<profile>
+			<id>itc</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
 
 		<profile>
 
