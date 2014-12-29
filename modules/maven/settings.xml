@@ -1,119 +1,289 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
 
-    <pluginGroups>
-        <pluginGroup>org.sonatype.plugins</pluginGroup>
-        <pluginGroup>org.jboss.maven.plugins</pluginGroup>
-    </pluginGroups>
+	<pluginGroups>
+		<pluginGroup>org.sonatype.plugins</pluginGroup>
+		<pluginGroup>org.jboss.maven.plugins</pluginGroup>
+	</pluginGroups>
 
-    <servers>
-        <server>
-            <id>itc.releases</id>
-            <username>admin</username>
-            <password>admin123</password>
-        </server>
+	<servers>
 
-        <server>
-            <id>itc.snapshots</id>
-            <username>admin</username>
-            <password>admin123</password>
-        </server>
+		<server>
+			<id>itc.releases</id>
+			<username>admin</username>
+			<password>admin123</password>
+		</server>
 
-        <server>
-            <id>bisnode-releases</id>
-            <username>develdev</username>
-            <password>Bisnode2011bisnode</password>
-        </server>
+		<server>
+			<id>itc.snapshots</id>
+			<username>admin</username>
+			<password>admin123</password>
+		</server>
 
-        <server>
-            <id>bisnode-snapshots</id>
-            <username>develdev</username>
-            <password>Bisnode2011bisnode</password>
-        </server>
+		<server>
+			<id>cz.vodafone.releases</id>
+			<username>admin</username>
+			<password>admin123</password>
+		</server>
 
-    </servers>
+		<server>
+			<id>cz.vodafone.shapshots</id>
+			<username>admin</username>
+			<password>admin123</password>
+		</server>
 
-    <profiles>
+		<server>
+			<id>bisnode.releases</id>
+			<username>admin</username>
+			<password>admin123</password>
+		</server>
 
-        <profile>
-            <id>itc</id>
+		<server>
+			<id>bisnode.snapshots</id>
+			<username>admin</username>
+			<password>admin123</password>
+		</server>
 
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
+	</servers>
 
-            <repositories>
+	<profiles>
 
-                <repository>
-                    <id>itc.releases</id>
-                    <name>ITC Snapshots</name>
+		<profile>
+			<id>itc</id>
 
-                    <releases>
-                        <enabled>false</enabled>
-                        <updatePolicy>always</updatePolicy>
-                        <checksumPolicy>warn</checksumPolicy>
-                    </releases>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
 
-                    <snapshots>
-                        <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </snapshots>
+			<repositories>
 
-                    <url>http://nexus.itc/content/repositories/snapshots</url>
-                    <layout>default</layout>
+				<repository>
+					<id>itc.snapshots</id>
+					<name>ITC Snapshots</name>
 
-                </repository>
+					<releases>
+						<enabled>false</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>warn</checksumPolicy>
+					</releases>
 
-                <repository>
-                    <id>ict.releases</id>
-                    <name>ICT Releases</name>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
 
-                    <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
-                        <checksumPolicy>warn</checksumPolicy>
-                    </releases>
+					<url>http://nexus.itc/content/repositories/snapshots</url>
+					<layout>default</layout>
 
-                    <snapshots>
-                        <enabled>false</enabled>
-                        <updatePolicy>always</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </snapshots>
+				</repository>
 
-                    <url>http://nexus.itc/content/repositories/releases</url>
-                    <layout>default</layout>
+				<repository>
+					<id>ict.releases</id>
+					<name>ICT Releases</name>
 
-                </repository>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+						<checksumPolicy>warn</checksumPolicy>
+					</releases>
 
-            </repositories>
+					<snapshots>
+						<enabled>false</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
 
-            <properties>
-                <sonar.jdbc.url>jdbc:mysql://sonar.itc/sonar</sonar.jdbc.url>
-                <sonar.jdbc.driver>com.mysql.jdbc.Driver</sonar.jdbc.driver>
-                <sonar.jdbc.username>sonar</sonar.jdbc.username>
-                <sonar.jdbc.password>sonar</sonar.jdbc.password>
-                <sonar.host.url>http://sonar.itc</sonar.host.url>
-            </properties>
+					<url>http://nexus.itc/content/repositories/releases</url>
+					<layout>default</layout>
 
-        </profile>
+				</repository>
 
-        <!-- <profile> <id>bisnode</id> <activation> <activeByDefault>false</activeByDefault> 
-            </activation> <repositories> <repository> <id>bisnode-snapshots</id> <name>Bisnode 
-            Snapshots</name> <releases> <enabled>false</enabled> <updatePolicy>always</updatePolicy> 
-            <checksumPolicy>warn</checksumPolicy> </releases> <snapshots> <enabled>true</enabled> 
-            <updatePolicy>never</updatePolicy> <checksumPolicy>fail</checksumPolicy> 
-            </snapshots> <url>http://nexus.dev/content/repositories/snapshots </url> 
-            <layout>default</layout> </repository> <repository> <id>bisnode-releases</id> 
-            <name>Bisnode Releases</name> <releases> <enabled>true</enabled> <updatePolicy>never</updatePolicy> 
-            <checksumPolicy>warn</checksumPolicy> </releases> <snapshots> <enabled>false</enabled> 
-            <updatePolicy>always</updatePolicy> <checksumPolicy>fail</checksumPolicy> 
-            </snapshots> <url>http://nexus.dev/content/repositories/releases </url> <layout>default</layout> 
-            </repository> </repositories> <properties> <sonar.jdbc.url>jdbc:mysql://mysql.dev/sonar 
-            </sonar.jdbc.url> <sonar.jdbc.driver>com.mysql.jdbc.Driver </sonar.jdbc.driver> 
-            <sonar.jdbc.username>sonar</sonar.jdbc.username> <sonar.jdbc.password>sonar</sonar.jdbc.password> 
-            <sonar.host.url>http://sonar.dev</sonar.host.url> </properties> </profile> -->
-    </profiles>
+			</repositories>
 
-    <!-- <activeProfiles> <activeProfile></activeProfile> </activeProfiles> -->
+			<properties>
+				<sonar.jdbc.url>jdbc:mysql://sonar.itc/sonar</sonar.jdbc.url>
+				<sonar.jdbc.driver>com.mysql.jdbc.Driver</sonar.jdbc.driver>
+				<sonar.jdbc.username>sonar</sonar.jdbc.username>
+				<sonar.jdbc.password>sonar</sonar.jdbc.password>
+				<sonar.host.url>http://sonar.itc</sonar.host.url>
+			</properties>
+
+		</profile>
+
+		<profile>
+			<id>cz.vodafone</id>
+
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+
+			<repositories>
+
+				<repository>
+					<id>cz.vodafone.releases</id>
+					<name>ITC Releases</name>
+
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>warn</checksumPolicy>
+					</releases>
+
+					<snapshots>
+						<enabled>false</enabled>
+						<updatePolicy>never</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+
+					<url>http://nexus.itc/content/repositories/cz.vodafone.releases</url>
+					<layout>default</layout>
+
+				</repository>
+
+				<repository>
+					<id>cz.vodafone.shapshots</id>
+					<name>ICT Snapshots</name>
+
+					<releases>
+						<enabled>false</enabled>
+						<updatePolicy>never</updatePolicy>
+						<checksumPolicy>warn</checksumPolicy>
+					</releases>
+
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+
+					<url>http://nexus.itc:8081/content/repositories/cz.vodafone.shapshots</url>
+					<layout>default</layout>
+
+				</repository>
+
+			</repositories>
+
+			<properties>
+				<sonar.jdbc.url>jdbc:mysql://sonar.itc/sonar</sonar.jdbc.url>
+				<sonar.jdbc.driver>com.mysql.jdbc.Driver</sonar.jdbc.driver>
+				<sonar.jdbc.username>sonar</sonar.jdbc.username>
+				<sonar.jdbc.password>sonar</sonar.jdbc.password>
+				<sonar.host.url>http://sonar.itc</sonar.host.url>
+			</properties>
+
+		</profile>
+
+		<profile>
+			<id>php</id>
+
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+
+			<pluginRepositories>
+
+				<pluginRepository>
+					<id>php.release</id>
+					<name>PHP-Maven 2 Release Repository</name>
+					<url>http://repos.php-maven.org/releases</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+				</pluginRepository>
+
+				<pluginRepository>
+					<id>php.snapshots</id>
+					<name>PHP-Maven 2 Snapshot Repository</name>
+					<url>http://repos.php-maven.org/snapshots</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</pluginRepository>
+			</pluginRepositories>
+
+			<repositories>
+
+				<repository>
+					<id>php.release</id>
+					<name>PHP-Maven 2 Release Repository</name>
+					<url>http://repos.php-maven.org/releases</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+				</repository>
+
+				<repository>
+					<id>php.snapshots</id>
+					<name>PHP-Maven 2 Snapshot Repository</name>
+					<url>http://repos.php-maven.org/snapshots</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+		</profile>
+
+		<profile>
+			<id>bisnode.snapshots</id>
+
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+
+			<repositories>
+
+				<repository>
+					<id>bisnode.snapshots</id>
+					<name>Bisnode Snapshots</name>
+					<releases>
+						<enabled>false</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>warn</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+					<url>http://nexus.itc/content/repositories/cz.bisnode.snapshots</url>
+					<layout>default</layout>
+				</repository>
+
+				<repository>
+					<id>bisnode.releases</id>
+					<name>Bisnode Releases</name>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+						<checksumPolicy>warn</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+					<url>http://nexus.dev/content/repositories/cz.bisnode.releases</url>
+					<layout>default</layout>
+				</repository>
+			</repositories>
+
+			<properties>
+				<sonar.jdbc.url>jdbc:mysql://mysql.dev/sonar </sonar.jdbc.url>
+				<sonar.jdbc.driver>com.mysql.jdbc.Driver</sonar.jdbc.driver>
+				<sonar.jdbc.username>sonar</sonar.jdbc.username>
+				<sonar.jdbc.password>sonar</sonar.jdbc.password>
+				<sonar.host.url>http://sonar.itc</sonar.host.url>
+			</properties>
+
+		</profile>
+	</profiles>
+
+	<!-- <activeProfiles> <activeProfile></activeProfile> </activeProfiles> -->
 </settings>

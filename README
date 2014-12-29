@@ -1,0 +1,76 @@
+IT Cloud Infrastructure
+
+	SaaS Modules
+	
+		Domain Name Services
+		
+			${DOM}.dev.                      IN      A       ${IP}
+			${DOM}.stage.                    IN      A       ${IP}
+			${DOM}.prod.                     IN      A       ${IP}
+			${DOM}.test.                     IN      A       ${IP}
+			
+			${DOM}.wamp.                     IN      A   127.0.0.1
+			${DOM}.wamp.dev.                 IN      A   127.0.0.1
+			${DOM}.wamp.stage.               IN      A   127.0.0.1
+			${DOM}.wamp.prod.                IN      A   127.0.0.1
+			${DOM}.wamp.test.                IN      A   127.0.0.1
+			
+			smtp.${DOM}.                     IN      A       ${IP}
+			imap.${DOM}.                     IN      A       ${IP}
+			email.${DOM}.                    IN      A       ${IP}
+			
+			ldap.${DOM}.                     IN      A       ${IP}
+			
+			maven.${DOM}.                    IN      A       ${IP}
+			snapshots.maven.${DOM}.          IN      A       ${IP}
+			*.snapshots.maven.${DOM}.        IN      A       ${IP}
+			releases.maven.${DOM}.           IN      A       ${IP}
+			*.releases.${DOM}.               IN      A       ${IP}
+			
+			nexus.${DOM}.                    IN      A       ${IP}
+			snapshots.nexus.${DOM}.          IN      A       ${IP}
+			releases.nexus.${DOM}.           IN      A       ${IP}
+			repository.${DOM}.               IN      A       ${IP}
+			snapshots.repository.${DOM}.     IN      A       ${IP}
+			releases.repository.${DOM}.      IN      A       ${IP}
+			snapshots.nexus.${DOM}.          IN      A       ${IP}
+			
+			jenkins.${DOM}.                  IN      A       ${IP}
+			git.${DOM}.                      IN      A       ${IP}
+			
+			tests.${DOM}.                    IN      A       ${IP}
+			sonar.${DOM}.                    IN      A       ${IP}
+			
+			apache.${DOM}.                   IN      A       ${IP}
+			tomcat.${DOM}.                   IN      A       ${IP}
+			nginx.${DOM}.                    IN      A       ${IP}
+			awstats.${DOM}.                  IN      A       ${IP}
+			logs.${DOM}.                     IN      A       ${IP}
+			mysql.${DOM}.                    IN      A       ${IP}
+			pgsql.${DOM}.                    IN      A       ${IP}
+			
+		Apache HTTP Services 
+			
+		Maven Project Management
+		
+		Jenkins CI
+		
+		Sonar Code Quality Profiles Dashboard
+		
+		Messaging
+		
+		Site Hosting Services
+			
+		
+		Distribution Management.
+		
+			Linux Systems
+				Spacewalk Distribution System
+					https://fedorahosted.org/spacewalk/wiki/UserDocs
+				Red Hat Satellites
+				Maven Nexus Repository
+
+			Windows Systems
+				Windows DLL
+				Maven Nexus Repository
+				

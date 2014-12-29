@@ -5,22 +5,23 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>sk.itcloud</groupId>
+		<artifactId>sk.itcloud.project</artifactId>
+		<version>0.0.13-SNAPSHOT</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
+
 	<groupId>sk.itcloud</groupId>
-	<artifactId>sk.itcloud.project</artifactId>
-	<version>0.0.13-SNAPSHOT</version>
-
+	<artifactId>sk.itcloud.php</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-
-	<organization>
-		<name>${project.organization.name}</name>
-		<url>${project.organization.url}</url>
-	</organization>
 
 	<scm>
 		<url>${project.scm.url}</url>
 		<connection>${project.scm.connection}</connection>
 		<developerConnection>${project.scm.developerConnection}</developerConnection>
-		<tag>${project.scm.tag}</tag>
+		<tag>sk.itcloud.project-0.0.6</tag>
 	</scm>
 
 	<issueManagement>
@@ -158,144 +159,7 @@
 		<sonar.importSources>true</sonar.importSources>
 		<sonar.dynamicAnalysis>true</sonar.dynamicAnalysis>
 
-		<rpm.name>${project.artifactId}</rpm.name>
-		<rpm.group>${project.groupId}</rpm.group>
-		<rpm.copyright>${project.organization.name}</rpm.copyright>
-		<rpm.distribution>RPM</rpm.distribution>
-		<rpm.prefix>/var/www/${project.groupId}/${project.artifactId}</rpm.prefix>
-		<rpm.needarch>noarch</rpm.needarch>
-
 	</properties>
-
-	<build>
-
-		<defaultGoal>install</defaultGoal>
-
-		<pluginManagement>
-
-			<plugins>
-
-				<plugin>
-					<groupId>de.taimos</groupId>
-					<artifactId>redmine-maven-plugin</artifactId>
-					<version>1.7.0</version>
-					<configuration>
-						<projectIdentifier>${project.redmine.projectIdentifier}</projectIdentifier>
-						<projectVersionPrefix>${project.redmine.projectVersionIdentifier}</projectVersionPrefix>
-						<redmineKey>${project.redmine.redmineKey}</redmineKey>
-						<changelogTemplate>${project.redmine.changelogTemplate}</changelogTemplate>
-						<changelogFile>${project.redmine.changelogFile}</changelogFile>
-						<changelogVersion>${project.redmine.changelogVersion}</changelogVersion>
-						<rpmChangelogAuthor>${project.redmine.rpmChangelogAuthor}</rpmChangelogAuthor>
-					</configuration>
-				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-scm-plugin</artifactId>
-				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-release-plugin</artifactId>
-					<configuration>
-						<tagNameFormat>${release.tagNameFormat}</tagNameFormat>
-					</configuration>
-					<dependencies>
-						<dependency>
-							<groupId>org.apache.maven.scm</groupId>
-							<artifactId>maven-scm-provider-gitexe</artifactId>
-							<version>1.8.1</version>
-						</dependency>
-					</dependencies>
-				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-changelog-plugin</artifactId>
-					<version>2.3</version>
-
-					<configuration>
-						<executions>
-							<execution>
-								<id>include-announcement-file</id>
-								<phase>install</phase>
-								<goals>
-									<goal>announcement-generate</goal>
-								</goals>
-								<configuration>
-									<announcementFile>${project.changelog.announcementFile}</announcementFile>
-									<outputDirectory>${project.changelog.outputDirectory}</outputDirectory>
-								</configuration>
-							</execution>
-						</executions>
-					</configuration>
-				</plugin>
-
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>sonar-maven-plugin</artifactId>
-				</plugin>
-
-				<plugin>
-					<groupId>com.soebes.maven.plugins.dmg</groupId>
-					<artifactId>doxygen-maven-plugin</artifactId>
-				</plugin>
-
-				<plugin>
-					<groupId>org.codehaus.sonar-plugins</groupId>
-					<artifactId>maven-report</artifactId>
-				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-changes-plugin</artifactId>
-				</plugin>
-
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>exec-maven-plugin</artifactId>
-				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-site-plugin</artifactId>
-					<version>3.4</version>
-					<dependencies>
-						<dependency>
-							<groupId>org.apache.maven.wagon</groupId>
-							<artifactId>wagon-ssh</artifactId>
-							<version>1.0</version>
-						</dependency>
-					</dependencies>
-				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-resources-plugin</artifactId>
-					<configuration>
-						<encoding>${project.encoding}</encoding>
-					</configuration>
-					<executions>
-						<execution>
-							<id>resources</id>
-							<phase>compile</phase>
-							<goals>
-								<goal>resources</goal>
-								<goal>testResources</goal>
-							</goals>
-							<inherited>false</inherited>
-							<configuration>
-								<indentSize>4</indentSize>
-								<lineLength>80</lineLength>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-
-	</build>
 
 	<profiles>
 
@@ -308,6 +172,7 @@
 					<family>linux</family>
 				</os>
 			</activation>
+
 
 			<build>
 				<plugins>
@@ -357,7 +222,7 @@
 									<groupname>apache</groupname>
 									<sources>
 										<source>
-											<location>${project.build.directory}/${project.build.finalname}.${project.packaging}</location>
+											<location>${project.build.directory}/site</location>
 										</source>
 									</sources>
 								</mapping>
@@ -369,18 +234,5 @@
 			</build>
 		</profile>
 	</profiles>
-	
-	<modules>
-		<module>modules/389</module>
-		<module>modules/apache</module>
-		<module>modules/distribution</module>
-		<module>modules/git</module>
-		<module>modules/jenkins</module>
-		<module>modules/maven</module>
-		<module>modules/nexus</module>
-		<module>modules/php</module>
-		<module>modules/sonar</module>
-		<module>modules/webmin</module>
-	</modules>
 
 </project>
