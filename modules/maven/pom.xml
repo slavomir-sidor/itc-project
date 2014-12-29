@@ -214,7 +214,7 @@
 								<defineStatement>_unpackaged_files_terminate_build 0</defineStatement>
 							</defineStatements>
 
-							<mappings>
+							<!-- <mappings>
 								<mapping>
 									<directory>${rpm.prefix}</directory>
 									<filemode>755</filemode>
@@ -226,7 +226,7 @@
 										</source>
 									</sources>
 								</mapping>
-							</mappings>
+							</mappings> -->
 
 						</configuration>
 					</plugin>

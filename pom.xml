@@ -349,27 +349,13 @@
 								<defineStatement>_unpackaged_files_terminate_build 0</defineStatement>
 							</defineStatements>
 
-							<mappings>
-								<mapping>
-									<directory>${rpm.prefix}</directory>
-									<filemode>755</filemode>
-									<username>root</username>
-									<groupname>apache</groupname>
-									<sources>
-										<source>
-											<location>${project.build.directory}/${project.build.finalname}.${project.packaging}</location>
-										</source>
-									</sources>
-								</mapping>
-							</mappings>
-
 						</configuration>
 					</plugin>
 				</plugins>
 			</build>
 		</profile>
 	</profiles>
-	
+
 	<modules>
 		<module>modules/389</module>
 		<module>modules/apache</module>
