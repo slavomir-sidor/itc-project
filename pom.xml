@@ -10,6 +10,7 @@
 	<version>0.0.13-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
 
 	<organization>
 		<name>${project.organization.name}</name>
@@ -355,18 +356,5 @@
 			</build>
 		</profile>
 	</profiles>
-
-	<modules>
-		<module>modules/389</module>
-		<module>modules/apache</module>
-		<module>modules/distribution</module>
-		<module>modules/git</module>
-		<module>modules/jenkins</module>
-		<module>modules/maven</module>
-		<module>modules/nexus</module>
-		<module>modules/php</module>
-		<module>modules/sonar</module>
-		<module>modules/webmin</module>
-	</modules>
 
 </project>
