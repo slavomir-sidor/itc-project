@@ -10,6 +10,74 @@
 	<version>0.0.13-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
+	
+	<properties>
+
+		<project.name>${project.artifactId}</project.name>
+		<project.encoding>UTF-8</project.encoding>
+
+		<project.organization.name>${project.groupId}</project.organization.name>
+		<project.organization.url>http://project.${project.artifactId}</project.organization.url>
+		<release.tagNameFormat>itc-@{project.version}</release.tagNameFormat>
+
+		<project.scm.host>git.itc</project.scm.host>
+		<project.scm.url>scm:git:ssh://${project.scm.host}/summary/?r=${project.groupId}/${project.artifactId}</project.scm.url>
+		<project.scm.connection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}</project.scm.connection>
+		<project.scm.developerConnection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}</project.scm.developerConnection>
+		<project.scm.path>/git/${project.groupId}/${project.artifactId}</project.scm.path>
+		<project.scm.tag>master</project.scm.tag>
+		<project.scm.scmVersionType>branch</project.scm.scmVersionType>
+		<project.scm.skipCheckoutIfExists>false</project.scm.skipCheckoutIfExists>
+		<project.scm.displayFileDetailUrl>${project.scm.url};a=blob;f=%FILE%;hb=refs/heads/${project.scm.tag}</project.scm.displayFileDetailUrl>
+
+		<project.changelog.announcementFile>CHANGES.txt</project.changelog.announcementFile>
+		<project.changelog.outputDirectory>${project.build.outputDirectory}/META-INF/</project.changelog.outputDirectory>
+
+		<project.ciManagement.host>jenkins.${project.artifactId}</project.ciManagement.host>
+		<project.ciManagement.system>Jenkins</project.ciManagement.system>
+		<project.ciManagement.url>http://${project.ciManagement.host}/view/${project.groupId}/job/${project.artifactId}/</project.ciManagement.url>
+
+		<project.distributionManagement.site.id>maven-${project.artifactId}</project.distributionManagement.site.id>
+		<project.distributionManagement.site.host>http://maven.${project.artifactId}</project.distributionManagement.site.host>
+		<project.distributionManagement.site.url>file:///usr/share/maven-sites/${project.groupId}/${project.artifactId}/${project.version}/</project.distributionManagement.site.url>
+
+		<!-- distributionManagement repository -->
+		<project.distributionManagement.repository.host>nexus.itc</project.distributionManagement.repository.host>
+		<project.distributionManagement.repository.id>itc.releases</project.distributionManagement.repository.id>
+		<project.distributionManagement.repository.url>http://${project.distributionManagement.repository.host}/content/repositories/releases</project.distributionManagement.repository.url>
+		<project.distributionManagement.repository.name>ITC Releases</project.distributionManagement.repository.name>
+
+		<!-- distributionManagement snapshotRepository -->
+		<project.distributionManagement.snapshotRepository.host>nexus.itc</project.distributionManagement.snapshotRepository.host>
+		<project.distributionManagement.snapshotRepository.id>itc.snapshots</project.distributionManagement.snapshotRepository.id>
+		<project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/snapshots</project.distributionManagement.snapshotRepository.url>
+		<project.distributionManagement.snapshotRepository.name>ITC Snapshots</project.distributionManagement.snapshotRepository.name>
+
+		<project.issueManagement.system>Redmine</project.issueManagement.system>
+		<project.issueManagement.host>redmine.${project.artifactId}</project.issueManagement.host>
+		<project.issueManagement.url>http://${project.issueManagement.host}</project.issueManagement.url>
+
+		<project.redmine.projectIdentifier>itc-${project.groupId}-${project.artifactId}</project.redmine.projectIdentifier>
+		<project.redmine.changelogFile>${project.build.directory}/redmine/changelog</project.redmine.changelogFile>
+		<project.redmine.projectVersionIdentifier>${project.version}</project.redmine.projectVersionIdentifier>
+		<!-- <project.redmine.changelogTemplate>${project.resourceDirectory}</project.redmine.changelogTemplate> -->
+		<project.redmine.rpmchangelog>${project.build.outputDirectory}/redmine/rpmchangelog</project.redmine.rpmchangelog>
+		<project.redmine.rpmChangelogAuthor>${user.name}</project.redmine.rpmChangelogAuthor>
+
+		<!-- Sonar -->
+		<sonar.branch>${project.scm.tag}</sonar.branch>
+		<sonar.importSources>true</sonar.importSources>
+		<sonar.dynamicAnalysis>true</sonar.dynamicAnalysis>
+
+		<rpm.name>${project.artifactId}</rpm.name>
+		<rpm.group>${project.groupId}</rpm.group>
+		<rpm.copyright>${project.organization.name}</rpm.copyright>
+		<rpm.distribution>RPM</rpm.distribution>
+		<rpm.prefix>/var/www/${project.groupId}/${project.artifactId}</rpm.prefix>
+		<rpm.needarch>noarch</rpm.needarch>
+
+	</properties>
+	
 	<name>${project.artifactId}</name>
 
 	<organization>
@@ -100,73 +168,6 @@
 		</repository>
 
 	</repositories>
-
-	<properties>
-
-		<project.name>${project.artifactId}</project.name>
-		<project.encoding>UTF-8</project.encoding>
-
-		<project.organization.name>${project.groupId}</project.organization.name>
-		<project.organization.url>http://project.${project.artifactId}</project.organization.url>
-		<release.tagNameFormat>itc-@{project.version}</release.tagNameFormat>
-
-		<project.scm.host>git.itc</project.scm.host>
-		<project.scm.url>scm:git:ssh://${project.scm.host}/summary/?r=${project.groupId}/${project.artifactId}</project.scm.url>
-		<project.scm.connection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}</project.scm.connection>
-		<project.scm.developerConnection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}</project.scm.developerConnection>
-		<project.scm.path>/git/${project.groupId}/${project.artifactId}</project.scm.path>
-		<project.scm.tag>master</project.scm.tag>
-		<project.scm.scmVersionType>branch</project.scm.scmVersionType>
-		<project.scm.skipCheckoutIfExists>false</project.scm.skipCheckoutIfExists>
-		<project.scm.displayFileDetailUrl>${project.scm.url};a=blob;f=%FILE%;hb=refs/heads/${project.scm.tag}</project.scm.displayFileDetailUrl>
-
-		<project.changelog.announcementFile>CHANGES.txt</project.changelog.announcementFile>
-		<project.changelog.outputDirectory>${project.build.outputDirectory}/META-INF/</project.changelog.outputDirectory>
-
-		<project.ciManagement.host>jenkins.${project.artifactId}</project.ciManagement.host>
-		<project.ciManagement.system>Jenkins</project.ciManagement.system>
-		<project.ciManagement.url>http://${project.ciManagement.host}/view/${project.groupId}/job/${project.artifactId}/</project.ciManagement.url>
-
-		<project.distributionManagement.site.id>maven-${project.artifactId}</project.distributionManagement.site.id>
-		<project.distributionManagement.site.host>http://maven.${project.artifactId}</project.distributionManagement.site.host>
-		<project.distributionManagement.site.url>file:///usr/share/maven-sites/${project.groupId}/${project.artifactId}/${project.version}/</project.distributionManagement.site.url>
-
-		<!-- distributionManagement repository -->
-		<project.distributionManagement.repository.host>nexus.itc</project.distributionManagement.repository.host>
-		<project.distributionManagement.repository.id>itc.releases</project.distributionManagement.repository.id>
-		<project.distributionManagement.repository.url>http://${project.distributionManagement.repository.host}/content/repositories/releases</project.distributionManagement.repository.url>
-		<project.distributionManagement.repository.name>ITC Releases</project.distributionManagement.repository.name>
-
-		<!-- distributionManagement snapshotRepository -->
-		<project.distributionManagement.snapshotRepository.host>nexus.itc</project.distributionManagement.snapshotRepository.host>
-		<project.distributionManagement.snapshotRepository.id>itc.snapshots</project.distributionManagement.snapshotRepository.id>
-		<project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/snapshots</project.distributionManagement.snapshotRepository.url>
-		<project.distributionManagement.snapshotRepository.name>ITC Snapshots</project.distributionManagement.snapshotRepository.name>
-
-		<project.issueManagement.system>Redmine</project.issueManagement.system>
-		<project.issueManagement.host>redmine.${project.artifactId}</project.issueManagement.host>
-		<project.issueManagement.url>http://${project.issueManagement.host}</project.issueManagement.url>
-
-		<project.redmine.projectIdentifier>itc-${project.groupId}-${project.artifactId}</project.redmine.projectIdentifier>
-		<project.redmine.changelogFile>${project.build.directory}/redmine/changelog</project.redmine.changelogFile>
-		<project.redmine.projectVersionIdentifier>${project.version}</project.redmine.projectVersionIdentifier>
-		<!-- <project.redmine.changelogTemplate>${project.resourceDirectory}</project.redmine.changelogTemplate> -->
-		<project.redmine.rpmchangelog>${project.build.outputDirectory}/redmine/rpmchangelog</project.redmine.rpmchangelog>
-		<project.redmine.rpmChangelogAuthor>${user.name}</project.redmine.rpmChangelogAuthor>
-
-		<!-- Sonar -->
-		<sonar.branch>${project.scm.tag}</sonar.branch>
-		<sonar.importSources>true</sonar.importSources>
-		<sonar.dynamicAnalysis>true</sonar.dynamicAnalysis>
-
-		<rpm.name>${project.artifactId}</rpm.name>
-		<rpm.group>${project.groupId}</rpm.group>
-		<rpm.copyright>${project.organization.name}</rpm.copyright>
-		<rpm.distribution>RPM</rpm.distribution>
-		<rpm.prefix>/var/www/${project.groupId}/${project.artifactId}</rpm.prefix>
-		<rpm.needarch>noarch</rpm.needarch>
-
-	</properties>
 
 	<build>
 
