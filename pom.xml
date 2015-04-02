@@ -4,7 +4,7 @@
 
 	<groupId>sk.itcloud</groupId>
 	<artifactId>sk.itcloud.project</artifactId>
-	<version>0.0.15-SNAPSHOT</version>
+	<version>0.0.16-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 
