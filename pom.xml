@@ -4,7 +4,7 @@
 
 	<groupId>sk.itcloud</groupId>
 	<artifactId>sk.itcloud.project</artifactId>
-	<version>0.0.17</version>
+	<version>0.0.18-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 
@@ -86,7 +86,7 @@
 		<url>${project.scm.url}</url>
 		<connection>${project.scm.connection}</connection>
 		<developerConnection>${project.scm.developerConnection}</developerConnection>
-		<tag>itc-0.0.17</tag>
+		<tag>${project.scm.tag}</tag>
 	</scm>
 
 	<issueManagement>
