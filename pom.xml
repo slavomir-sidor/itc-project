@@ -1,4 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -17,10 +20,10 @@
 		<project.organization.url>http://${project.artifactId}</project.organization.url>
 		<release.tagNameFormat>itc-@{project.version}</release.tagNameFormat>
 
-		<project.scm.host>git.itc</project.scm.host>
-		<project.scm.url>scm:git:ssh://${project.scm.host}/summary/?r=${project.groupId}/${project.artifactId}</project.scm.url>
-		<project.scm.connection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}</project.scm.connection>
-		<project.scm.developerConnection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}</project.scm.developerConnection>
+		<project.scm.host>git.itc</project.scm.host><!-- Plannet git.${project.artifactId}, waits for host key verification on build maschine -->
+		<project.scm.url>scm:git:ssh://${project.scm.host}/summary/?r=${project.groupId}/${project.artifactId}.git</project.scm.url>
+		<project.scm.connection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}.git</project.scm.connection>
+		<project.scm.developerConnection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}.git</project.scm.developerConnection>
 		<project.scm.path>/git/${project.groupId}/${project.artifactId}</project.scm.path>
 		<project.scm.tag>master</project.scm.tag>
 		<project.scm.scmVersionType>branch</project.scm.scmVersionType>
