@@ -108,33 +108,6 @@
 	</repositories>
 
 	<properties>
-
-		<project.name>\${project.artifactId}</project.name>
-		<project.encoding>UTF-8</project.encoding>
-
-		<project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
-
-		<project.organization.name>\${project.groupId}</project.organization.name>
-		<project.organization.url>http://project.\${project.artifactId}</project.organization.url>
-		<release.tagNameFormat>itc-\@{project.version}</release.tagNameFormat>
-
-		<project.scm.host>git.itc</project.scm.host>
-		<project.scm.url>scm:git:ssh://\${project.scm.host}/summary/?r=\${project.groupId}/\${project.artifactId}.git</project.scm.url>
-		<project.scm.connection>scm:git:ssh://\${project.scm.host}/git/\${project.groupId}/\${project.artifactId}.git</project.scm.connection>
-		<project.scm.developerConnection>scm:git:ssh://\${project.scm.host}/git/\${project.groupId}/\${project.artifactId}.git</project.scm.developerConnection>
-		<project.scm.path>/git/\${project.groupId}/\${project.artifactId}.git</project.scm.path>
-		<project.scm.tag>master</project.scm.tag>
-		<project.scm.scmVersionType>branch</project.scm.scmVersionType>
-		<project.scm.skipCheckoutIfExists>false</project.scm.skipCheckoutIfExists>
-		<project.scm.displayFileDetailUrl>\${project.scm.url};a=blob;f=%FILE%;hb=refs/heads/\${project.scm.tag}</project.scm.displayFileDetailUrl>
-
-		<project.changelog.announcementFile>CHANGES.txt</project.changelog.announcementFile>
-		<project.changelog.outputDirectory>\${project.build.outputDirectory}/META-INF/</project.changelog.outputDirectory>
-
-		<project.ciManagement.host>jenkins.\${project.artifactId}</project.ciManagement.host>
-		<project.ciManagement.system>Jenkins</project.ciManagement.system>
-		<project.ciManagement.url>http://\${project.ciManagement.host}/view/\${project.groupId}/job/\${project.artifactId}/</project.ciManagement.url>
-
 		<project.distributionManagement.site.id>maven-\${project.artifactId}</project.distributionManagement.site.id>
 		<project.distributionManagement.site.host>http://maven.\${project.artifactId}</project.distributionManagement.site.host>
 		<project.distributionManagement.site.url>file:///usr/share/maven-sites/\${project.groupId}/\${project.artifactId}/\${project.version}/</project.distributionManagement.site.url>
@@ -161,7 +134,6 @@
 		<!-- <project.redmine.changelogTemplate>\${project.resourceDirectory}</project.redmine.changelogTemplate> -->
 		<project.redmine.rpmchangelog>\${project.build.outputDirectory}/redmine/rpmchangelog</project.redmine.rpmchangelog>
 		<project.redmine.rpmChangelogAuthor>\${user.name}</project.redmine.rpmChangelogAuthor>
-
 	</properties>
 
 	<profiles>
