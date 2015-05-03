@@ -24,7 +24,7 @@
 		<project.url>http://www.${project.host}</project.url>
 
 		<project.organization.name>${project.groupId}</project.organization.name>
-		<project.organization.url>http://${project.artifactId}.itcloud.sk</project.organization.url>
+		<project.organization.url>www.itcloud.sk</project.organization.url>
 		<release.tagNameFormat>itc-@{project.version}</release.tagNameFormat>
 
 		<project.scm.host>git.${project.host}</project.scm.host>
