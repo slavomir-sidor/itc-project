@@ -119,10 +119,10 @@
 		<release.tagNameFormat>itc-\@{project.version}</release.tagNameFormat>
 
 		<project.scm.host>git.itc</project.scm.host>
-		<project.scm.url>scm:git:ssh://\${project.scm.host}/summary/?r=\${project.groupId}/\${project.artifactId}</project.scm.url>
-		<project.scm.connection>scm:git:ssh://\${project.scm.host}/git/\${project.groupId}/\${project.artifactId}</project.scm.connection>
-		<project.scm.developerConnection>scm:git:ssh://\${project.scm.host}/git/\${project.groupId}/\${project.artifactId}</project.scm.developerConnection>
-		<project.scm.path>/git/\${project.groupId}/\${project.artifactId}</project.scm.path>
+		<project.scm.url>scm:git:ssh://\${project.scm.host}/summary/?r=\${project.groupId}/\${project.artifactId}.git</project.scm.url>
+		<project.scm.connection>scm:git:ssh://\${project.scm.host}/git/\${project.groupId}/\${project.artifactId}.git</project.scm.connection>
+		<project.scm.developerConnection>scm:git:ssh://\${project.scm.host}/git/\${project.groupId}/\${project.artifactId}.git</project.scm.developerConnection>
+		<project.scm.path>/git/\${project.groupId}/\${project.artifactId}.git</project.scm.path>
 		<project.scm.tag>master</project.scm.tag>
 		<project.scm.scmVersionType>branch</project.scm.scmVersionType>
 		<project.scm.skipCheckoutIfExists>false</project.scm.skipCheckoutIfExists>
