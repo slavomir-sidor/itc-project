@@ -20,7 +20,7 @@
 		<project.organization.url>http://${project.artifactId}</project.organization.url>
 		<release.tagNameFormat>itc-@{project.version}</release.tagNameFormat>
 
-		<project.scm.host>git.itc</project.scm.host><!-- Plannet git.${project.artifactId}, waits for host key verification on build maschine -->
+		<project.scm.host>git.itc</project.scm.host>
 		<project.scm.url>scm:git:ssh://${project.scm.host}/summary/?r=${project.groupId}/${project.artifactId}.git</project.scm.url>
 		<project.scm.connection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}.git</project.scm.connection>
 		<project.scm.developerConnection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}.git</project.scm.developerConnection>
