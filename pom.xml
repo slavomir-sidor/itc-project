@@ -6,8 +6,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>sk.itcloud</groupId>
-	<artifactId>sk.itcloud.project</artifactId>
-	<version>0.0.19-SNAPSHOT</version>
+	<artifactId>project</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 
@@ -44,13 +44,13 @@
 		<!-- distributionManagement repository -->
 		<project.distributionManagement.repository.host>nexus.itc</project.distributionManagement.repository.host>
 		<project.distributionManagement.repository.id>sk.itcloud.releases</project.distributionManagement.repository.id>
-		<project.distributionManagement.repository.url>http://${project.distributionManagement.repository.host}/content/repositories/sk.itcloud.releases</project.distributionManagement.repository.url>
+		<project.distributionManagement.repository.url>http://${project.distributionManagement.repository.host}/content/repositories/${project.distributionManagement.repository.id}</project.distributionManagement.repository.url>
 		<project.distributionManagement.repository.name>ITCloud Releases</project.distributionManagement.repository.name>
 
 		<!-- distributionManagement snapshotRepository -->
 		<project.distributionManagement.snapshotRepository.host>nexus.itc</project.distributionManagement.snapshotRepository.host>
 		<project.distributionManagement.snapshotRepository.id>sk.itcloud.snapshots</project.distributionManagement.snapshotRepository.id>
-		<project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/sk.itcloud.snapshots</project.distributionManagement.snapshotRepository.url>
+		<project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/${sk.itcloud.snapshots}</project.distributionManagement.snapshotRepository.url>
 		<project.distributionManagement.snapshotRepository.name>ITCloud Snapshots</project.distributionManagement.snapshotRepository.name>
 
 		<project.issueManagement.system>Redmine</project.issueManagement.system>
@@ -280,6 +280,10 @@
 		</pluginManagement>
 
 	</build>
+
+	<modules>
+		<module>archetype</module>
+	</modules>
 
 	<profiles>
 
