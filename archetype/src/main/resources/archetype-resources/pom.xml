@@ -21,8 +21,8 @@
 	<scm>
 		<url>\${project.scm.url}</url>
 		<connection>\${project.scm.connection}</connection>
-		<developerConnection>${project.scm.developerConnection}</developerConnection>
-		<tag>${project.scm.tag}</tag>
+		<developerConnection>\${project.scm.developerConnection}</developerConnection>
+		<tag>\${project.scm.tag}</tag>
 	</scm>
 
 	<issueManagement>
@@ -89,7 +89,7 @@
 		<repository>
 			<id>\${project.distributionManagement.repository.id}</id>
 			<url>\${project.distributionManagement.repository.url}</url>
-			<name>${project.distributionManagement.repository.name}</name>
+			<name>\${project.distributionManagement.repository.name}</name>
 
 			<releases>
 				<enabled>true</enabled>
@@ -123,17 +123,6 @@
 		<project.distributionManagement.snapshotRepository.id>sk.itcloud.snapshots</project.distributionManagement.snapshotRepository.id>
 		<project.distributionManagement.snapshotRepository.url>http://\${project.distributionManagement.snapshotRepository.host}/content/repositories/sk.itcloud.snapshots</project.distributionManagement.snapshotRepository.url>
 		<project.distributionManagement.snapshotRepository.name>ITC Snapshots</project.distributionManagement.snapshotRepository.name>
-
-		<project.issueManagement.system>Redmine</project.issueManagement.system>
-		<project.issueManagement.host>redmine.\${project.artifactId}</project.issueManagement.host>
-		<project.issueManagement.url>http://\${project.issueManagement.host}</project.issueManagement.url>
-
-		<project.redmine.projectIdentifier>itc-\${project.groupId}-\${project.artifactId}</project.redmine.projectIdentifier>
-		<project.redmine.changelogFile>\${project.build.directory}/redmine/changelog</project.redmine.changelogFile>
-		<project.redmine.projectVersionIdentifier>\${project.version}</project.redmine.projectVersionIdentifier>
-		<!-- <project.redmine.changelogTemplate>\${project.resourceDirectory}</project.redmine.changelogTemplate> -->
-		<project.redmine.rpmchangelog>\${project.build.outputDirectory}/redmine/rpmchangelog</project.redmine.rpmchangelog>
-		<project.redmine.rpmChangelogAuthor>\${user.name}</project.redmine.rpmChangelogAuthor>
 	</properties>
 
 	<profiles>
