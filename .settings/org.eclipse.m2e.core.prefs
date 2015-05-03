@@ -1,4 +1,4 @@
-activeProfiles=sk.itcloud
+activeProfiles=sk.itcloud,development
 eclipse.preferences.version=1
 resolveWorkspaceProjects=false
 version=1

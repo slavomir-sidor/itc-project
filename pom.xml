@@ -11,16 +11,23 @@
 
 	<packaging>pom</packaging>
 
+	<name>${project.artifactId}</name>
+	<description>${project.description}</description>
+	<url>${project.url}</url>
+
 	<properties>
 
 		<project.name>${project.artifactId}</project.name>
+		<project.description>ITCloud Project</project.description>
 		<project.encoding>UTF-8</project.encoding>
+		<project.host>itcloud.sk</project.host>
+		<project.url>http://www.${project.host}</project.url>
 
 		<project.organization.name>${project.groupId}</project.organization.name>
-		<project.organization.url>http://${project.artifactId}</project.organization.url>
+		<project.organization.url>http://${project.artifactId}.itcloud.sk</project.organization.url>
 		<release.tagNameFormat>itc-@{project.version}</release.tagNameFormat>
 
-		<project.scm.host>git.itc</project.scm.host>
+		<project.scm.host>git.${project.host}</project.scm.host>
 		<project.scm.url>scm:git:ssh://${project.scm.host}/summary/?r=${project.groupId}/${project.artifactId}.git</project.scm.url>
 		<project.scm.connection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}.git</project.scm.connection>
 		<project.scm.developerConnection>scm:git:ssh://${project.scm.host}/git/${project.groupId}/${project.artifactId}.git</project.scm.developerConnection>
@@ -33,7 +40,7 @@
 		<project.changelog.announcementFile>CHANGES.txt</project.changelog.announcementFile>
 		<project.changelog.outputDirectory>${project.build.outputDirectory}/META-INF/</project.changelog.outputDirectory>
 
-		<project.ciManagement.host>jenkins.${project.artifactId}</project.ciManagement.host>
+		<project.ciManagement.host>jenkins.${project.host}</project.ciManagement.host>
 		<project.ciManagement.system>Jenkins</project.ciManagement.system>
 		<project.ciManagement.url>http://${project.ciManagement.host}/view/${project.groupId}/job/${project.artifactId}/</project.ciManagement.url>
 
@@ -42,22 +49,22 @@
 		<project.distributionManagement.site.url>file:///usr/share/maven-sites/${project.groupId}/${project.artifactId}/${project.version}/</project.distributionManagement.site.url>
 
 		<!-- distributionManagement repository -->
-		<project.distributionManagement.repository.host>nexus.itc</project.distributionManagement.repository.host>
+		<project.distributionManagement.repository.host>nexus.${project.host}</project.distributionManagement.repository.host>
 		<project.distributionManagement.repository.id>sk.itcloud.releases</project.distributionManagement.repository.id>
 		<project.distributionManagement.repository.url>http://${project.distributionManagement.repository.host}/content/repositories/${project.distributionManagement.repository.id}</project.distributionManagement.repository.url>
 		<project.distributionManagement.repository.name>ITCloud Releases</project.distributionManagement.repository.name>
 
 		<!-- distributionManagement snapshotRepository -->
-		<project.distributionManagement.snapshotRepository.host>nexus.itc</project.distributionManagement.snapshotRepository.host>
+		<project.distributionManagement.snapshotRepository.host>nexus.${project.host}</project.distributionManagement.snapshotRepository.host>
 		<project.distributionManagement.snapshotRepository.id>sk.itcloud.snapshots</project.distributionManagement.snapshotRepository.id>
 		<project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/${sk.itcloud.snapshots}</project.distributionManagement.snapshotRepository.url>
 		<project.distributionManagement.snapshotRepository.name>ITCloud Snapshots</project.distributionManagement.snapshotRepository.name>
 
 		<project.issueManagement.system>Redmine</project.issueManagement.system>
-		<project.issueManagement.host>redmine.${project.artifactId}</project.issueManagement.host>
+		<project.issueManagement.host>redmine.${project.host}</project.issueManagement.host>
 		<project.issueManagement.url>http://${project.issueManagement.host}</project.issueManagement.url>
 
-		<project.redmine.projectIdentifier>itc-${project.groupId}-${project.artifactId}</project.redmine.projectIdentifier>
+		<project.redmine.projectIdentifier>${project.artifactId}</project.redmine.projectIdentifier>
 		<project.redmine.changelogFile>${project.build.directory}/redmine/changelog</project.redmine.changelogFile>
 		<project.redmine.projectVersionIdentifier>${project.version}</project.redmine.projectVersionIdentifier>
 		<!-- <project.redmine.changelogTemplate>${project.resourceDirectory}</project.redmine.changelogTemplate> -->
@@ -65,6 +72,7 @@
 		<project.redmine.rpmChangelogAuthor>${user.name}</project.redmine.rpmChangelogAuthor>
 
 		<!-- Sonar -->
+		<sonar.host>sonar.${project.host}</sonar.host>
 		<sonar.branch>${project.scm.tag}</sonar.branch>
 		<sonar.importSources>true</sonar.importSources>
 
@@ -77,8 +85,6 @@
 		<rpm.needarch>noarch</rpm.needarch>
 
 	</properties>
-
-	<name>${project.artifactId}</name>
 
 	<organization>
 		<name>${project.organization.name}</name>
@@ -286,6 +292,26 @@
 	</modules>
 
 	<profiles>
+
+		<profile>
+			<id>development</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<project.host>dev.${project.groupId}.${project.artifactId}</project.host>
+			</properties>
+		</profile>
+		
+		<profile>
+			<id>staging</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<project.host>stage.${project.groupId}.${project.artifactId}</project.host>
+			</properties>
+		</profile>
 
 		<profile>
 
