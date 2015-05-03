@@ -20,7 +20,7 @@
 		<project.name>${project.artifactId}</project.name>
 		<project.description>ITCloud Project</project.description>
 		<project.encoding>UTF-8</project.encoding>
-		<project.host>itcloud.sk</project.host>
+		<project.host>sk.itcloud</project.host>
 		<project.url>http://www.${project.host}</project.url>
 
 		<project.organization.name>${project.groupId}</project.organization.name>
@@ -321,7 +321,7 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<project.host>${project.groupId}.${project.artifactId}</project.host>
+				<project.host>sk.itcloud</project.host>
 				<project.url>http://www.${project.host}</project.url>
 			</properties>
 		</profile>
