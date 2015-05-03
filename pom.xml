@@ -57,7 +57,7 @@
 		<!-- distributionManagement snapshotRepository -->
 		<project.distributionManagement.snapshotRepository.host>nexus.${project.host}</project.distributionManagement.snapshotRepository.host>
 		<project.distributionManagement.snapshotRepository.id>sk.itcloud.snapshots</project.distributionManagement.snapshotRepository.id>
-		<project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/${sk.itcloud.snapshots}</project.distributionManagement.snapshotRepository.url>
+		<project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/${project.distributionManagement.snapshotRepository.id}</project.distributionManagement.snapshotRepository.url>
 		<project.distributionManagement.snapshotRepository.name>ITCloud Snapshots</project.distributionManagement.snapshotRepository.name>
 
 		<project.issueManagement.system>Redmine</project.issueManagement.system>
