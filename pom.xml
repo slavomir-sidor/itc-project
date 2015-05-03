@@ -299,17 +299,30 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<project.host>dev.${project.groupId}.${project.artifactId}</project.host>
+				<project.host>${project.groupId}.${project.artifactId}</project.host>
+				<project.url>http://dev.${project.host}</project.url>
 			</properties>
 		</profile>
-		
+
 		<profile>
 			<id>staging</id>
 			<activation>
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<project.host>stage.${project.groupId}.${project.artifactId}</project.host>
+				<project.host>${project.groupId}.${project.artifactId}</project.host>
+				<project.url>http://stage.${project.host}</project.url>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>production</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<project.host>${project.groupId}.${project.artifactId}</project.host>
+				<project.url>http://www.${project.host}</project.url>
 			</properties>
 		</profile>
 
