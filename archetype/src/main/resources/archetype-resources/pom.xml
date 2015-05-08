@@ -70,6 +70,12 @@
 	<repositories>
 
 		<repository>
+			<id>\${project.distributionManagement.publicRepository.id}</id>
+			<name>\${project.distributionManagement.publicRepository.name}</name>
+			<url>\${project.distributionManagement.publicRepository.url}</url>
+		</repository>
+
+		<repository>
 
 			<id>\${project.distributionManagement.snapshotRepository.id}</id>
 			<url>\${project.distributionManagement.snapshotRepository.url}</url>
@@ -99,12 +105,23 @@
 			</snapshots>
 		</repository>
 
-		<repository>
-			<id>ITC Repository</id>
-			<url>http://nexus.itc/content/groups/itc/</url>
-		</repository>
-
 	</repositories>
+
+	<properties>
+
+		<!-- distributionManagement repository -->
+		<project.distributionManagement.repository.host>nexus.${project.host}</project.distributionManagement.repository.host>
+		<project.distributionManagement.repository.id>sk.itcloud.releases</project.distributionManagement.repository.id>
+		<project.distributionManagement.repository.url>http://${project.distributionManagement.repository.host}/content/repositories/${project.distributionManagement.repository.id}</project.distributionManagement.repository.url>
+		<project.distributionManagement.repository.name>ITCloud Releases</project.distributionManagement.repository.name>
+
+		<!-- distributionManagement snapshotRepository -->
+		<project.distributionManagement.snapshotRepository.host>nexus.${project.host}</project.distributionManagement.snapshotRepository.host>
+		<project.distributionManagement.snapshotRepository.id>sk.itcloud.snapshots</project.distributionManagement.snapshotRepository.id>
+		<project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/${project.distributionManagement.snapshotRepository.id}</project.distributionManagement.snapshotRepository.url>
+		<project.distributionManagement.snapshotRepository.name>ITCloud Snapshots</project.distributionManagement.snapshotRepository.name>
+
+	</properties>
 
 	<profiles>
 
