@@ -131,24 +131,23 @@
 	</distributionManagement>
 
 	<developers>
+
 		<developer>
+
 			<email>slavomir.kuzma@gmail.com</email>
 			<name>Slavomir Kuzma</name>
+
 			<roles>
 				<role>Management</role>
 				<role>Integration</role>
 				<role>Developer</role>
 			</roles>
+
 		</developer>
+
 	</developers>
 
 	<repositories>
-
-		<repository>
-			<id>${project.distributionManagement.publicRepository.id}</id>
-			<name>${project.distributionManagement.publicRepository.name}</name>
-			<url>${project.distributionManagement.publicRepository.url}</url>
-		</repository>
 
 		<repository>
 
@@ -167,6 +166,7 @@
 		</repository>
 
 		<repository>
+
 			<id>${project.distributionManagement.repository.id}</id>
 			<url>${project.distributionManagement.repository.url}</url>
 			<name>${project.distributionManagement.repository.name}</name>
@@ -178,6 +178,15 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
+
+		</repository>
+
+		<repository>
+
+			<id>${project.distributionManagement.publicRepository.id}</id>
+			<name>${project.distributionManagement.publicRepository.name}</name>
+			<url>${project.distributionManagement.publicRepository.url}</url>
+
 		</repository>
 
 	</repositories>
