@@ -89,8 +89,8 @@
 		<rpm.needarch>noarch</rpm.needarch>
 
 		<!-- Java Settings -->
-		<project.source.version>1.8</project.source.version>
-		<project.target.version>1.8</project.target.version>
+		<project.source.version>1.7</project.source.version>
+		<project.target.version>1.7</project.target.version>
 
 	</properties>
 
