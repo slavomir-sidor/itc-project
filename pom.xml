@@ -8,10 +8,8 @@
 	<groupId>sk.itcloud</groupId>
 	<artifactId>project</artifactId>
 	<version>0.0.19-SNAPSHOT</version>
-
 	<packaging>pom</packaging>
-
-	<name>${project.artifactId}</name>
+	<name>${project.groupId} / ${project.artifactId}</name>
 	<description>${project.description}</description>
 	<url>${project.url}</url>
 
@@ -89,6 +87,10 @@
 		<rpm.distribution>RPM</rpm.distribution>
 		<rpm.prefix>/usr/share/${project.groupId}/${project.artifactId}</rpm.prefix>
 		<rpm.needarch>noarch</rpm.needarch>
+
+		<!-- Java Settings -->
+		<project.source.version>1.8</project.source.version>
+		<project.target.version>1.8</project.target.version>
 
 	</properties>
 
