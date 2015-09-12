@@ -15,11 +15,11 @@
 		<project.name>${project.artifactId}</project.name>
 		<project.description>ITCloud Project</project.description>
 		<project.encoding>UTF-8</project.encoding>
-		<project.host>${project.groupId}.${project.artifactId}</project.host>
+		<project.host>${project.artifactId}.${project.organization.url}</project.host>
 		<project.url>http://www.${project.host}</project.url>
 
 		<project.organization.name>${project.groupId}</project.organization.name>
-		<project.organization.url>www.itcloud.sk</project.organization.url>
+		<project.organization.url>itcloud.sk</project.organization.url>
 		<release.tagNameFormat>itc-@{project.version}</release.tagNameFormat>
 
 		<project.scm.host>git.${project.host}</project.scm.host>
@@ -86,8 +86,8 @@
 		<rpm.needarch>noarch</rpm.needarch>
 
 		<!-- Java Settings -->
-		<project.source.version>1.7</project.source.version>
-		<project.target.version>1.7</project.target.version>
+		<project.source.version>1.8</project.source.version>
+		<project.target.version>1.8</project.target.version>
 
 	</properties>
 
