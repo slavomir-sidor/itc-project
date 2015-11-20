@@ -4,7 +4,7 @@
 
 	<groupId>sk.itcloud</groupId>
 	<artifactId>itc-project</artifactId>
-	<version>0.0.20</version>
+	<version>0.0.21-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>${project.groupId} / ${project.artifactId}</name>
 	<description>${project.description}</description>
@@ -102,7 +102,7 @@
 		<url>${project.scm.url}</url>
 		<connection>${project.scm.connection}</connection>
 		<developerConnection>${project.scm.developerConnection}</developerConnection>
-		<tag>itc-0.0.20</tag>
+		<tag>${project.scm.tag}</tag>
 	</scm>
 
 	<issueManagement>
