@@ -1,0 +1,7 @@
+[openstack-juno]
+name=OpenStack Juno Repository
+baseurl=http://repos.fedorapeople.org/repos/openstack/openstack-juno/fedora-$releasever/
+enabled=1
+skip_if_unavailable=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-RDO-Juno
