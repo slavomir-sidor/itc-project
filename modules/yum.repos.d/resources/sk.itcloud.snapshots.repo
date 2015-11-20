@@ -1,0 +1,10 @@
+[sk.itcloud.snapshots]
+name=ITCloud Snapshots
+baseurl=http://nexus.itc/content/repositories/sk.itcloud.snapshots/
+enabled=1
+gpgcheck=0
+keepcache=0
+protect=0
+metadata_expire=0s
+autorefresh=1
+type=rpm-md

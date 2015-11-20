@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:tns="http://www.itcloud.sk/Webmin/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	name="Webmin"
+	targetNamespace="http://www.itcloud.sk/Webmin/">
+
+	<wsdl:message name="NewOperationRequest">
+		<wsdl:part
+			name="NewOperationRequest"
+			type="xsd:string" />
+	</wsdl:message>
+
+	<wsdl:message name="NewOperationResponse">
+		<wsdl:part
+			name="NewOperationResponse"
+			type="xsd:string" />
+	</wsdl:message>
+
+	<wsdl:portType name="Webmin">
+		<wsdl:operation name="NewOperation">
+			<wsdl:input message="tns:NewOperationRequest" />
+			<wsdl:output message="tns:NewOperationResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding
+		name="WebminHTTP"
+		type="tns:Webmin">
+		<http:binding verb="GET" />
+		<wsdl:operation name="NewOperation">
+			<http:operation location="/NewOperation" />
+			<wsdl:input>
+				<http:urlEncoded />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="Webmin">
+		<wsdl:port
+			binding="tns:WebminHTTP"
+			name="WebminHTTP">
+			<http:address location="http://www.example.org/" />
+		</wsdl:port>
+	</wsdl:service>
+
+</wsdl:definitions>

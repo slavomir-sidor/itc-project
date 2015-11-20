@@ -1,0 +1,348 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass IEEEtran-CompSoc
+\use_default_options true
+\begin_modules
+foottoend
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+IT Cloud Infrastructure
+\end_layout
+
+\begin_layout Enumerate
+Overview
+\end_layout
+
+\begin_layout Enumerate
+Views
+\end_layout
+
+\begin_layout Enumerate
+SaaS Modules
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Project Management with Maven
+\end_layout
+
+\begin_layout Enumerate
+Project Profiling
+\end_layout
+
+\begin_layout Enumerate
+Domain Name Services
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+${DOM}.dev.
+ IN A ${IP}
+\end_layout
+
+\begin_layout Enumerate
+${DOM}.stage.
+ IN A ${IP}
+\end_layout
+
+\begin_layout Enumerate
+${DOM}.prod.
+ IN A ${IP}
+\end_layout
+
+\begin_layout Enumerate
+${DOM}.test.
+ IN A ${IP}
+\end_layout
+
+\begin_layout Enumerate
+${DOM}.wamp.
+ IN A 127.0.0.1 ${DOM}.wamp.dev.
+ IN A 127.0.0.1
+\end_layout
+
+\begin_layout Enumerate
+${DOM}.wamp.stage.
+ IN A 127.0.0.1
+\end_layout
+
+\begin_layout Enumerate
+${DOM}.wamp.prod.
+ IN A 127.0.0.1 ${DOM}.wamp.test.
+ IN A 127.0.0.1 
+\end_layout
+
+\begin_layout Standard
+smtp.${DOM}.
+ IN A ${IP} imap.${DOM}.
+ IN A ${IP} email.${DOM}.
+ IN A ${IP} 
+\end_layout
+
+\begin_layout Standard
+ldap.${DOM}.
+ IN A ${IP} 
+\end_layout
+
+\begin_layout Standard
+maven.${DOM}.
+ IN A ${IP}
+\end_layout
+
+\begin_layout Standard
+snapshots.maven.${DOM}.
+ IN A ${IP} 
+\end_layout
+
+\begin_layout Standard
+releases.maven.${DOM}.
+ IN A ${IP}
+\end_layout
+
+\begin_layout Standard
+*.releases.${DOM}.
+ IN A ${IP}
+\end_layout
+
+\begin_layout Enumerate
+*.snapshots.maven.${DOM}.
+ IN A ${IP}
+\end_layout
+
+\begin_layout Standard
+nexus.${DOM}.
+ IN A ${IP} snapshots.nexus.${DOM}.
+ IN A ${IP} releases.nexus.${DOM}.
+ IN A ${IP} repository.${DOM}.
+ IN A ${IP} snapshots.repository.${DOM}.
+ IN A ${IP} releases.repository.${DOM}.
+ IN A ${IP} snapshots.nexus.${DOM}.
+ IN A ${IP} 
+\end_layout
+
+\begin_layout Standard
+jenkins.${DOM}.
+ IN A ${IP} git.${DOM}.
+ IN A ${IP} 
+\end_layout
+
+\begin_layout Standard
+tests.${DOM}.
+ IN A ${IP} sonar.${DOM}.
+ IN A ${IP} 
+\end_layout
+
+\begin_layout Standard
+apache.${DOM}.
+ IN A ${IP} tomcat.${DOM}.
+ IN A ${IP} nginx.${DOM}.
+ IN A ${IP} awstats.${DOM}.
+ IN A ${IP} logs.${DOM}.
+ IN A ${IP} mysql.${DOM}.
+ IN A ${IP} pgsql.${DOM}.
+ IN A ${IP}
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Maven Project Management 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Profiles
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Jenkins Continuos Integration
+\end_layout
+
+\begin_layout Enumerate
+Sonar Profiles Code Quality Dashboards
+\end_layout
+
+\begin_layout Enumerate
+Messaging
+\end_layout
+
+\begin_layout Enumerate
+Apache PHP
+\end_layout
+
+\begin_layout Enumerate
+Apache Axis2
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+http://www.ibm.com/developerworks/library/ws-restwsdl/
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+DNS Services
+\end_layout
+
+\begin_layout Enumerate
+SMTP Services
+\end_layout
+
+\begin_layout Enumerate
+IMAP Services
+\end_layout
+
+\begin_layout Enumerate
+Distribution Management.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Profiling
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Applying Cross Domain Maven Profiles in Jenkins build Configuration Stereotypes
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+REQ01: Deploying artifact in user defined artifact to the target environment,
+ in Jenkins profiled build in build filtered resource xml build configuration
+ file, given with user parmetrized and Maven project generalized configuration.
+ Users are defined in hosting schema and Maven Lifecycle respect profiles
+ given in Maven POM.
+\end_layout
+
+\begin_layout Enumerate
+<maven2-moduleset plugin="maven-plugin@2.8"><postbuilders><org.jvnet.hudson.plugins.S
+SHBuilder plugin="ssh@2.4"> <siteName>root@localhost:22</siteName> <command>yum
+ install -y cz.vodafone.symfony.app.oskarta</command> </org.jvnet.hudson.plugins.SSHBuil
+der> </postbuilders></maven2-moduleset>
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Linux Systems Spacewalk Distribution System 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+https://fedorahosted.org/spacewalk/wiki/UserDocs Red Hat Satellites Maven
+ Nexus Repository
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Windows Systems
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+PHP DLL
+\end_layout
+
+\begin_layout Enumerate
+WAMP Directory VHost
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\end_body
+\end_document
