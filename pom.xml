@@ -46,13 +46,13 @@
 		<!-- Distribution Management Release Repository -->
 		<project.distributionManagement.repository.host>nexus.${project.host}</project.distributionManagement.repository.host>
 		<project.distributionManagement.repository.id>sk.itcloud.releases</project.distributionManagement.repository.id>
-		<project.distributionManagement.repository.url>http://${project.distributionManagement.repository.host}/content/repositories/${project.distributionManagement.repository.id}</project.distributionManagement.repository.url>
+		<project.distributionManagement.repository.url>http://${project.distributionManagement.repository.host}/content/repositories/releases</project.distributionManagement.repository.url>
 		<project.distributionManagement.repository.name>ITCloud Releases</project.distributionManagement.repository.name>
 
 		<!-- Distribution Management Snapshots Repository -->
 		<project.distributionManagement.snapshotRepository.host>nexus.${project.host}</project.distributionManagement.snapshotRepository.host>
 		<project.distributionManagement.snapshotRepository.id>sk.itcloud.snapshots</project.distributionManagement.snapshotRepository.id>
-		<project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/${project.distributionManagement.snapshotRepository.id}</project.distributionManagement.snapshotRepository.url>
+		<project.distributionManagement.snapshotRepository.url>http://${project.distributionManagement.snapshotRepository.host}/content/repositories/snapshots</project.distributionManagement.snapshotRepository.url>
 		<project.distributionManagement.snapshotRepository.name>ITCloud Snapshots</project.distributionManagement.snapshotRepository.name>
 
 		<!-- Distribution Management Repository -->
