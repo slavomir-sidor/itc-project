@@ -71,6 +71,8 @@
 		<!-- <project.redmine.changelogTemplate>${project.resourceDirectory}</project.redmine.changelogTemplate> -->
 		<project.redmine.rpmchangelog>${project.build.outputDirectory}/redmine/rpmchangelog</project.redmine.rpmchangelog>
 		<project.redmine.rpmChangelogAuthor>${user.name}</project.redmine.rpmChangelogAuthor>
+		
+		<maven-scm-provider-gitexe.version>1.9.4</maven-scm-provider-gitexe.version>
 
 		<!-- Sonar -->
 		<sonar.host>sonar.${project.host}</sonar.host>
@@ -228,7 +230,7 @@
 						<dependency>
 							<groupId>org.apache.maven.scm</groupId>
 							<artifactId>maven-scm-provider-gitexe</artifactId>
-							<version>1.8.1</version>
+							<version>${maven-scm-provider-gitexe.version}</version>
 						</dependency>
 					</dependencies>
 				</plugin>
