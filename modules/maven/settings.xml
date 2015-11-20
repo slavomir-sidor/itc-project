@@ -44,7 +44,7 @@
 						<checksumPolicy>fail</checksumPolicy>
 					</snapshots>
 
-					<url>http://nexus.${project.host}/content/repositories/snapshots</url>
+					<url>http://127.0.0.0:8280/content/repositories/snapshots</url>
 					<layout>default</layout>
 
 				</repository>

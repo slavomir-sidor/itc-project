@@ -1,6 +1,6 @@
 [sk.itcloud.releases]
 name=ITCloud Release
-baseurl=http://nexus.itc/content/repositories/sk.itcloud.releases
+baseurl=http://nexus.itcloud.sk/content/repositories/releases
 enabled=1
 gpgcheck=0
 keepcache=0

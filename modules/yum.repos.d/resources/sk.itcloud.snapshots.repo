@@ -1,6 +1,6 @@
 [sk.itcloud.snapshots]
 name=ITCloud Snapshots
-baseurl=http://nexus.itc/content/repositories/sk.itcloud.snapshots/
+baseurl=http://nexus.itcloud.sk/content/repositories/snapshots
 enabled=1
 gpgcheck=0
 keepcache=0
