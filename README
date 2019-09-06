@@ -69,8 +69,10 @@ IT Cloud Infrastructure
 					https://fedorahosted.org/spacewalk/wiki/UserDocs
 				Red Hat Satellites
 				Maven Nexus Repository
+				 - rpm.prefix parametrizovany groupov artifactom a verziou !
 
 			Windows Systems
 				Windows DLL
 				Maven Nexus Repository
-				
+
+
