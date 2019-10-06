@@ -1,6 +1,0 @@
-[spacewalk-source]
-name=Spacewalk SRPMS
-baseurl=http://yum.spacewalkproject.org/2.2/Fedora/$releasever/source/
-gpgkey=http://yum.spacewalkproject.org/RPM-GPG-KEY-spacewalk-2012
-enabled=0
-gpgcheck=1

@@ -1,6 +1,0 @@
-[spacewalk-nightly]
-name=Spacewalk nightly
-baseurl=http://yum.spacewalkproject.org/nightly/Fedora/$releasever/$basearch/
-gpgkey=http://yum.spacewalkproject.org/RPM-GPG-KEY-spacewalk-2012
-enabled=0
-gpgcheck=0
