@@ -1,0 +1,6 @@
+[sonar]
+name=Sonar
+baseurl=http://downloads.sourceforge.net/project/sonar-pkg/rpm
+gpgcheck=0
+repo_gpgcheck=0
+enabled=1

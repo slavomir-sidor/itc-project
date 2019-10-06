@@ -1,0 +1,1 @@
+docker run --publish-all=true --cpus="2.00" --privileged=true -v C:/workspace:/var/www --network host -it fedora/api

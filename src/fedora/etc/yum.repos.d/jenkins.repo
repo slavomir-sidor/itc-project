@@ -1,0 +1,6 @@
+[bintraybintray-jfrog-artifactory-rpms]
+name=bintray-jfrog-artifactory-rpms
+baseurl=https://jfrog.bintray.com/artifactory-rpms
+gpgcheck=0
+repo_gpgcheck=0
+enabled=1
