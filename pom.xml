@@ -4,7 +4,7 @@
 
 	<groupId>sk.itcloud</groupId>
 	<artifactId>itc-project</artifactId>
-	<version>0.0.21</version>
+	<version>0.0.21-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>${project.groupId} / ${project.artifactId}</name>
 	<description>${project.description}</description>
@@ -23,7 +23,7 @@
 		<release.tagNameFormat>itc-@{project.version}</release.tagNameFormat>
 
 		<project.scm.host>github.com</project.scm.host>
-		<project.scm.url>scm:git:git@${project.scm.host}/slavomirsidorhuljak/${project.name}.git</project.scm.url>
+		<project.scm.url>scm:git:git@${project.scm.host}/slavomirsidorhuljak/${project.artifactId}.git</project.scm.url>
 		<project.scm.connection>${project.scm.url}</project.scm.connection>
 		<project.scm.developerConnection>${project.scm.url}</project.scm.developerConnection>
 		<project.scm.path>/git/${project.groupId}/${project.artifactId}</project.scm.path>
